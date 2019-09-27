@@ -2,10 +2,15 @@
 
 import React from 'react'
 
-const Title = (props) => {
+const Title = ({ name, lastName }) => {
     return (
-        <h1>Ola {props.name + ' '+ props.lastName}</h1>
+        <h1>Ola {name + ' '+ lastName}</h1>
     )
+}
+
+Title.defaultProps = {
+    name: 'Desconhecido',
+    lastName: 'Sem sobrenome'
 }
 
 /*const Title = React.createClass({
