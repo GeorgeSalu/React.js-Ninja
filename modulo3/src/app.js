@@ -3,7 +3,17 @@
 import React from 'react'
 import Title from './title'
 
-var App = React.createClass({
+class App extends React.Component {
+  render() {
+    return (
+      <div className='container'>
+        <Title name='Fernando' />
+      </div>
+    )
+  }
+}
+
+/*var App = React.createClass({
   render: function () {
     return (
         <div className="1">
@@ -11,6 +21,6 @@ var App = React.createClass({
         </div>
     )
   }
-})
+})*/
 
 export default App
