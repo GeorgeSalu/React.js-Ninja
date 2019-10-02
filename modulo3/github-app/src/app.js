@@ -13,9 +13,9 @@ const App = () => (
 
     <div className='user-info'>
       <img src='https://avatars.githubusercontent.com/u/48766?v=3' />
-      <h2>
+      <h1 className='username'>
         <a href='https://github.com/fdaciuk'>Fernando Daciuk</a>
-      </h2>
+      </h1>
 
       <ul className='repos-info'>
         <li>- Repositorios: 122</li>
