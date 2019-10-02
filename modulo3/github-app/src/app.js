@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      userInfo: {
+      userinfo: {
         username: 'fernando daciuk',
         repos: 12,
         followers: 10,
@@ -25,7 +25,7 @@ class App extends Component {
   }
   render() {
     return <AppContent
-        userInfo={this.state.userInfo}
+        userinfo={this.state.userinfo}
         repos={this.state.repos}
         starred={this.state.starred}
      />
