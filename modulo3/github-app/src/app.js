@@ -40,9 +40,19 @@ class App extends Component {
   }
 
   getRepos(type) {
-
     return (e) => {
       console.log('type : ', type)
+      ajax().get(`https://api.github.com/users/fdaciuk/${type}`)
+        .then((result) => {
+          this.setState({
+            [type]: result.map((repo) => {
+              return {
+                name: repo.name,
+                link: repo.html_url
+              }
+            })
+          })
+        })
     }
   }
 
