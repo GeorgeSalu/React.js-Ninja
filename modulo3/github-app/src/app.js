@@ -39,14 +39,21 @@ class App extends Component {
 
   }
 
+  getRepos(type) {
+
+    return (e) => {
+      console.log('type : ', type)
+    }
+  }
+
   render() {
     return <AppContent
         userinfo={this.state.userinfo}
         repos={this.state.repos}
         starred={this.state.starred}
         handleSearch={(e) => this.handleSearch(e)}
-        getRepos={() => console.log('get repos')}
-        getStarred={() => console.log('get starred')}
+        getRepos={this.getRepos('repos')}
+        getStarred={this.getRepos('starred')}
      />
   }
 }
