@@ -15,13 +15,19 @@ class App extends Component {
     }
   }
 
+  getGitHubApiUrl(username, type) {
+    const internalUser = username ? `/${username}` : ''
+    const internalType = type ? `/${type}` : ''
+    return `https://api.github.com/users${internalUser}${internalType}`
+  }
+
   handleSearch(e) {
     const value = e.target.value
     const keyCode = e.which || e.keyCode
     const ENTER = 13
 
     if(keyCode === ENTER) {
-      ajax().get(`https://api.github.com/users/${value}`)
+      ajax().get(this.getGitHubApiUrl(value))
         .then((result) => {
           this.setState({
             userinfo: {
@@ -31,7 +37,9 @@ class App extends Component {
               repos: result.public_repos,
               followers: result.followers,
               following: result.following
-            }
+            },
+            repos:[],
+            starred: []
           })
 
         })
@@ -41,8 +49,8 @@ class App extends Component {
 
   getRepos(type) {
     return (e) => {
-      console.log('type : ', type)
-      ajax().get(`https://api.github.com/users/fdaciuk/${type}`)
+      const username = this.state.userinfo.login
+      ajax().get(this.getGitHubApiUrl(username, type))
         .then((result) => {
           this.setState({
             [type]: result.map((repo) => {
