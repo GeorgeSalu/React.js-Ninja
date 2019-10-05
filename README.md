@@ -1,4 +1,4 @@
-# React.js-Ninja
+## React.js-Ninja
 O curso para se tornar um ninja em React, e todas as ferramentas do ecossistema!
 
 O Curso React.js Ninja é para aqueles desenvolvedores que querem crescer como programadores na área de desenvolvimento web. Nesse curso será abordado não só sobre a lib React.js em si, mas todas as ferramentas e técnicas do ecossistema ao seu redor: redux, react-router, Server Side Rendering, programação funcional, testes, etc.
@@ -19,4 +19,5 @@ Há algum requisito ou pré-requisito para o curso?
 
 Para quem é este curso:
 
-    Desenvolvedores com conhecimento básico / intermediário em JavaScript que queiram entender sobre como o ReactJS funciona, e todo o seu ecossistema.
+    Desenvolvedores com conhecimento básico / intermediário em JavaScript que queiram entender 
+    sobre como o ReactJS funciona, e todo o seu ecossistema.
