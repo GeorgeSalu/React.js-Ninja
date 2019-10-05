@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       userinfo: null,
       repos: [],
-      starred: []
+      starred: [],
+      isFetching: false
     }
   }
 
@@ -28,7 +29,10 @@ class App extends Component {
 
     e.persist()
     if(keyCode === ENTER) {
-      e.target.disabled = true
+      this.setState({
+        isFetching: true
+      })
+
       ajax().get(this.getGitHubApiUrl(value))
         .then((result) => {
           this.setState({
@@ -45,9 +49,7 @@ class App extends Component {
           })
 
         })
-        .always(() => {
-          e.target.disabled = false
-        })
+        .always(() => this.setState({ isFetching: false }))
     }
 
   }
@@ -77,6 +79,7 @@ class App extends Component {
         handleSearch={(e) => this.handleSearch(e)}
         getRepos={this.getRepos('repos')}
         getStarred={this.getRepos('starred')}
+        isFetching={this.state.isFetching}
      />
   }
 }
