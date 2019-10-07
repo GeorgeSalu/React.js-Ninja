@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "jest-cli": "^15.1.1"
   }
