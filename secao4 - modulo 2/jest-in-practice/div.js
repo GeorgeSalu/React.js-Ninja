@@ -1,3 +1,5 @@
+'use strict'
+
 export default () => {
-  return 3
+  return 5
 }
