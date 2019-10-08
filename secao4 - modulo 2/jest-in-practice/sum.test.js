@@ -1,19 +1,8 @@
 'use strict'
 
-describe('# escopo', () => {
-  it('Um é igual a 1', () => {
-    expect(1).toBe(1)
-  })
-  it('Testando jest 2', () => {
+const expect = require('chai').expect
+const sum = require('./sum')
 
-  })
-})
-
-describe('# escopo 2', () => {
-  it('Testando jest', () => {
-
-  })
-  it('Testando jest 2', () => {
-
-  })
+it('sum should be a function', () => {
+  expect(sum).to.be.a('function')
 })
