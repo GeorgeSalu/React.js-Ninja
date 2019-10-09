@@ -1,18 +1,16 @@
 'use strict'
 
-const map = (arr, func) => {
+let counter = 0
 
-  if(typeof func !== 'function')
-    throw new TypeError('func is not a function')
+const map = (arr = [], func = (item) => item) => {
 
-  if(!Array.isArray(arr))
-    throw new TypeError('arr is not an array')
-
-  let newArr = []
-  for(let i = 0;i < arr.length; i++) {
-    newArr.push(func(arr[i], i, arr))
+  if(arr.length === 0) {
+    counter = 0
+    return []
   }
-  return newArr
+
+  const [head, ...tail] = arr
+  return [func(head, counter++)].concat(map(tail, func))
 }
 
 export default map
