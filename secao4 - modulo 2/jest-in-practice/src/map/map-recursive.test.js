@@ -31,7 +31,4 @@ it('map([1,2], (item, index, array) => array) should return [[1,2], [1,2]]', () 
   expect(map([1,2], (item, index, array) => array)).to.be.deep.equal([[1,2], [1,2]])
 })
 
-it('map([1,2]) should throw an error with message "func is not a function"', () => {
-  expect(map).to.throw(TypeError,'func is not a function')
-})
 
