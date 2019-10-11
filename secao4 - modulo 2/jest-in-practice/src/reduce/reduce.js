@@ -2,15 +2,15 @@
 
 const reduce = (arr, func, initialValue) => {
   let acc = initialValue
-  let arraCopy = arr
+  let arrCopy = arr
 
   if(initialValue === undefined) {
     acc = arr[0]
-    arraCopy = arr.slice(1)
+    arrCopy = arr.slice(1)
   }
 
-  for(let i = 0;i < arraCopy.length; i++) {
-    acc = func(acc, arraCopy[i], i)
+  for(let i = 0;i < arrCopy.length; i++) {
+    acc = func(acc, arrCopy[i], i)
   }
 
   return acc
