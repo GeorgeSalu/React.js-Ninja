@@ -6,6 +6,8 @@ const webpack = require('webpack')
 const HtmlPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+const DashboardPlugin = require('webpack-dashboard/plugin')
+
 module.exports = {
     devtool: 'source-map',
     entry: [
@@ -22,6 +24,7 @@ module.exports = {
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new DashboardPlugin(),
         new ExtractTextPlugin('style.css'),
         new HtmlPlugin({
           title: 'GitHub app',
