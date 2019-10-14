@@ -21,7 +21,6 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: ''
     },
-
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new DashboardPlugin(),
@@ -31,7 +30,6 @@ module.exports = {
           template: path.join(__dirname, 'src','html','template.html')
         })
     ],
-
     module: {
         preLoaders: [{
             test: /\.js$/,
@@ -49,6 +47,7 @@ module.exports = {
           exclude: /node_modules/,
           include: /src/,
           loaders: [ 'style','css']
+          //css modules
           //loaders: [ 'style','css?modules']
         }]
     }
