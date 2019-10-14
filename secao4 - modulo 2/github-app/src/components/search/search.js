@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import style from './search.css'
+import './search.css'
 
 const Search = ({ isDisabled, handleSearch }) => (
   <div className='search'>
