@@ -49,6 +49,7 @@ module.exports = {
           exclude: /node_modules/,
           include: /src/,
           loaders: [ 'style','css']
+          //loaders: [ 'style','css?modules']
         }]
     }
 }
