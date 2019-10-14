@@ -4,7 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-    devtool: 'source-map', 
+    devtool: 'source-map',
     entry: [
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:3000',
@@ -33,6 +33,11 @@ module.exports = {
             exclude: /node_modules/,
             include: /src/,
             loader: 'babel'
+        },{
+          test: /\.css$/,
+          exclude: /node_modules/,
+          include: /src/,
+          loaders: ['style','raw']
         }]
     }
 }
