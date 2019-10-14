@@ -1,10 +1,10 @@
 'use strict'
 
 import React, {PropTypes} from 'react'
-import Search from './search/search'
-import UserInfo from './user-info/user-info'
-import Actions from './actions/actions'
-import Repos from './repos/repos'
+import Search from 'components/search/search'
+import UserInfo from 'components/user-info/user-info'
+import Actions from 'components/actions/actions'
+import Repos from 'components/repos/repos'
 
 const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarred, isFetching }) => (
     <div className='app'>
