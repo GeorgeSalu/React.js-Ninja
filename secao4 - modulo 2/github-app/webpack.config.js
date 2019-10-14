@@ -4,6 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 const HtmlPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     devtool: 'source-map',
@@ -21,6 +22,7 @@ module.exports = {
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextPlugin('style.css'),
         new HtmlPlugin({
           title: 'GitHub app',
           template: path.join(__dirname, 'src','html','template.html')
@@ -43,7 +45,7 @@ module.exports = {
           test: /\.css$/,
           exclude: /node_modules/,
           include: /src/,
-          loaders: ['style','raw']
+          loader: ExtractTextPlugin.extract( 'style','css')
         }]
     }
 }
