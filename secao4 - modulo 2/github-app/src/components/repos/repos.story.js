@@ -13,7 +13,7 @@ storiesOf('respos',module)
     <Repos
       title='favoritos'
       repos={[{
-        link='http://blog.com.br',
+        link:'http://blog.com.br',
         name:'Blog'
       }]}
      />
