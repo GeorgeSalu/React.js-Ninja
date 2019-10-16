@@ -2,7 +2,7 @@
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
     "test": "jest --coverage --no-cache",
-    "test:watch": "yarn test -- --watch",
+    "test:watch": "npm test -- --watch",
     "lint": "standard --verbose | snazzy",
     "lint:watch": "gulp",
     "lint:fix": "standard --fix",
