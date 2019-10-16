@@ -3,7 +3,9 @@
     "start": "webpack-dashboard -- node server.js",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch",
-    "lint": "standard",
+    "lint": "standard --verbose | snazzy",
+    "lint:fix": "standard --fix",
+    "lint:watch": "gulp",
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p",
     "storybook": "start-storybook -p 6006 -c storybook",
     "build-storybook": "build-storybook -c storybook"
@@ -20,6 +22,7 @@
     "cross-env": "^6.0.3",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^4.0.2",
     "html-webpack-plugin": "^3.2.0",
     "jest-cli": "^15.1.1",
     "react-hot-loader": "^3.0.0-beta.2",
