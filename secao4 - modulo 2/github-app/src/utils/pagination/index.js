@@ -1,12 +1,11 @@
 'use strict'
 
 const pagination = ({ total, activePage }) => {
-  let pages = []
-  for(let i = 0; i < total; i++){
-    pages.push(i + 1)
+  if(total <= 5) {
+    return Array.from({ length: total }, (_, i) => i + 1)
   }
 
-  return pages
+  return [1,2,3, '...', 6]
 }
 
 export default pagination
