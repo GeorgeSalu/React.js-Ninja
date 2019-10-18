@@ -1,15 +1,25 @@
 'use strict'
 
-const centerRule = ({ total, activePage }) => {
-  if(activePage - 1 <= 0) {
-    return 1
+const centerRule = ({ total, activePage }) => (
+  activePage - 1 <= 0
+    ? 1
+    : activePage === total
+      ? activePage - 2
+      : activePage - 1
+)
+
+const isNumber = (value) => typeof value === 'number'
+
+const pagination = ({ total = 1, activePage = 1 } = {}) => {
+  if (!isNumber(total)) {
+    throw new TypeError('total should be a number')
   }
 
-  return activePage - 1
-}
+  if (!isNumber(activePage)) {
+    throw new TypeError('activePage should be a number')
+  }
 
-const pagination = ({ total, activePage }) => {
-  if(total <= 5) {
+  if (total <= 5) {
     return Array.from({ length: total }, (_, i) => i + 1)
   }
 
@@ -25,7 +35,7 @@ const pagination = ({ total, activePage }) => {
   let firstPage = pages[0]
   let secondPage = pages[1]
 
-  if(secondPage === (firstPage + 2)) {
+  if (secondPage === (firstPage + 2)) {
     pages = [
       firstPage,
       firstPage + 1,
@@ -33,10 +43,10 @@ const pagination = ({ total, activePage }) => {
     ]
   }
 
-  let penultimaPage = pages[pages.length - 2]
+  let penultimatePage = pages[pages.length - 2]
   let lastPage = pages[pages.length - 1]
 
-  if(penultimaPage === (lastPage - 2)) {
+  if (penultimatePage === (lastPage - 2)) {
     pages = [
       ...pages.slice(0, -1),
       lastPage - 1,
@@ -44,10 +54,21 @@ const pagination = ({ total, activePage }) => {
     ]
   }
 
-  penultimaPage = pages[pages.length - 2]
+  firstPage = pages[0]
+  secondPage = pages[1]
+
+  if (secondPage > (firstPage + 2)) {
+    pages = [
+      firstPage,
+      '...',
+      ...pages.slice(1)
+    ]
+  }
+
+  penultimatePage = pages[pages.length - 2]
   lastPage = pages[pages.length - 1]
 
-  if(penultimaPage <= (lastPage - 2)) {
+  if (penultimatePage < (lastPage - 2)) {
     pages = [
       ...pages.slice(0, -1),
       '...',
