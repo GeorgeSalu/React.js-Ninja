@@ -7,28 +7,28 @@ import Actions from 'components/actions/actions'
 import Repos from 'components/repos/repos'
 
 const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarred, isFetching }) => (
-    <div className='app'>
+  <div className='app'>
 
-      <Search isDisabled={isFetching} handleSearch={handleSearch}/>
+    <Search isDisabled={isFetching} handleSearch={handleSearch} />
 
-      {isFetching && <div>Carregando....</div>}
-      {!!userinfo && <UserInfo userinfo={userinfo} />}
+    {isFetching && <div>Carregando....</div>}
+    {!!userinfo && <UserInfo userinfo={userinfo} />}
 
-      {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred}/>}
+    {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
-      {!!repos.length &&
-        <Repos
-          className='repos'
-          title='Repositorios:'
-          repos={repos}
+    {!!repos.length &&
+    <Repos
+      className='repos'
+      title='Repositorios:'
+      repos={repos}
         />
       }
 
-      {!!starred.length &&
-        <Repos
-          className='starred'
-          title='Favoritos:'
-          repos={starred}
+    {!!starred.length &&
+    <Repos
+      className='starred'
+      title='Favoritos:'
+      repos={starred}
         />
       }
 

@@ -6,6 +6,6 @@ import Pagination from './index'
 
 const stories = storiesOf('<Pagination />', module)
 
-stories.add('without props',() => (
-  <Pagination total={10}/>
+stories.add('without props', () => (
+  <Pagination total={10} />
 ))

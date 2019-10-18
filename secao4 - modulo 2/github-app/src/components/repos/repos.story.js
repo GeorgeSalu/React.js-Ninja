@@ -4,7 +4,7 @@ import { storiesOf, module } from '@kadira/storybook'
 import React from 'react'
 import Repos from './repos'
 
-storiesOf('respos',module)
+storiesOf('respos', module)
   .add('with title prop', () => (
     <Repos title='Favoritos' />
   ))
@@ -13,8 +13,8 @@ storiesOf('respos',module)
     <Repos
       title='favoritos'
       repos={[{
-        link:'http://blog.com.br',
-        name:'Blog'
+        link: 'http://blog.com.br',
+        name: 'Blog'
       }]}
      />
   ))
