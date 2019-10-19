@@ -8,7 +8,7 @@ const Pagination = ({ total, activePage, pageLink }) => (
   <ul>
     {pagination({ total, activePage }).map((page, index) => (
       <li key={index}>
-        <Page page={page} pageLink={pageLink.replace('%page%', page)} onClick={onClick}/>
+        <Page page={page} pageLink={pageLink.replace('%page%', page)} onClick={onClick} />
       </li>
     ))}
   </ul>

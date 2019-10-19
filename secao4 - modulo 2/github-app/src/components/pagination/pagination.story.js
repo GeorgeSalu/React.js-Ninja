@@ -11,7 +11,7 @@ stories.add('without props', () => (
 ))
 
 stories.add('with total and activePage', () => (
-  <Pagination total={10} activePage={5}/>
+  <Pagination total={10} activePage={5} />
 ))
 
 stories.add('with page link', () => (
@@ -21,5 +21,5 @@ stories.add('with page link', () => (
 stories.add('with total and activePage', () => (
   <Pagination total={10} pageLink='http://mypage.com/page/%page%' onClick={(page) => {
     window.alert(page)
-  }}/>
+  }} />
 ))

@@ -44,7 +44,9 @@
     "globals": [
       "test",
       "it",
-      "describe"
+      "describe",
+      "PropTypes",
+      "onClick"
     ]
   }
 }

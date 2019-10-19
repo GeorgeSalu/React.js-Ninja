@@ -1,6 +1,6 @@
 'use strict'
 
-import { React } from "react";
+import { React } from 'react'
 
 const Page = ({ page, pageLink }) => {
   const Component = page === '...' ? 'span' : 'a'
