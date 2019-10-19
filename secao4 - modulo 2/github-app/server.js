@@ -2,7 +2,7 @@
 
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
-const config = require('./webpack.config')
+const config = require('./webpack/dev.config')
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
@@ -13,5 +13,7 @@ new WebpackDevServer(webpack(config), {
   if (err) {
     return console.log(err)
   }
+
   console.log('Listening on http://localhost:3000')
 })
+
