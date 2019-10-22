@@ -6,7 +6,7 @@ import UserInfo from 'components/user-info/user-info'
 import Actions from 'components/actions/actions'
 import Repos from 'components/repos/repos'
 
-const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarred, isFetching }) => (
+const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarred, isFetching, handlePagination }) => (
   <div className='app'>
 
     <Search isDisabled={isFetching} handleSearch={handleSearch} />
@@ -21,6 +21,7 @@ const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarr
         className='repos'
         title='Repositorios:'
         repos={repos}
+        handlePagination={(cliked) => handlePagination('repos:', cliked)}
           />
       }
 
@@ -29,6 +30,7 @@ const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarr
         className='starred'
         title='Favoritos:'
         repos={starred}
+        handlePagination={(cliked) => handlePagination('starred:', cliked)}
           />
       }
 
@@ -41,6 +43,7 @@ AppContent.propTypes = {
   starred: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  handlePagination: PropTypes.func.isRequired,
   getRepos: PropTypes.func.isRequired,
   getStarred: PropTypes.func.isRequired
 }
