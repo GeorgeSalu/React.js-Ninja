@@ -3,8 +3,9 @@
 import React, {PropTypes} from 'react'
 import pagination from 'utils/pagination'
 import Page from './page'
+import './pagination.css'
 
-const Pagination = ({ total, activePage, pageLink }) => (
+const Pagination = ({ total, activePage, pageLink, onClick }) => (
   <ul>
     {pagination({ total, activePage }).map((page, index) => (
       <li key={index} style={activePage === page ? { color: 'red' } : null}>
