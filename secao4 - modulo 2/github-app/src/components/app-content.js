@@ -15,9 +15,9 @@ const AppContent = (
     getStarred,
     isFetching,
     handlePagination }) => (
-      <div className='app'>
+  <div className='app'>
 
-        <Search isDisabled={isFetching} handleSearch={handleSearch} />
+    <Search isDisabled={isFetching} handleSearch={handleSearch} />
 
         {isFetching && <div>Carregando....</div>}
         {!!userinfo && <UserInfo userinfo={userinfo} />}
@@ -25,24 +25,24 @@ const AppContent = (
         {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
         {!!repos.repos.length &&
-        <Repos
-          className='repos'
-          title='Repositorios:'
-          repos={repos}
-          handlePagination={(cliked) => handlePagination('repos:', cliked)}
+          <Repos
+            className='repos'
+            title='Repositorios:'
+            repos={repos}
+            handlePagination={(cliked) => handlePagination('repos:', cliked)}
           />
       }
 
         {!!starred.repos.length &&
-      <Repos
-          className='starred'
-          title='Favoritos:'
-          repos={starred}
-          handlePagination={(cliked) => handlePagination('starred:', cliked)}
+          <Repos
+            className='starred'
+            title='Favoritos:'
+            repos={starred}
+            handlePagination={(cliked) => handlePagination('starred:', cliked)}
           />
       }
 
-      </div>
+  </div>
 )
 
 AppContent.propTypes = {
