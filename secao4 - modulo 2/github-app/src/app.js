@@ -10,8 +10,20 @@ class App extends Component {
     super()
     this.state = {
       userinfo: null,
-      repos: [],
-      starred: [],
+      repos: {
+        repos: [],
+        pagination: {
+          total: 1,
+          activePage: 1
+        }
+      },
+      starred: {
+        repos: [],
+        pagination: {
+          total: 1,
+          activePage: 1
+        }
+      },
       isFetching: false
     }
 
@@ -47,8 +59,8 @@ class App extends Component {
               followers: result.followers,
               following: result.following
             },
-            repos: [],
-            starred: []
+            repos: {},
+            starred: {}
           })
         })
         .always(() => this.setState({ isFetching: false }))
@@ -61,12 +73,14 @@ class App extends Component {
       ajax().get(this.getGitHubApiUrl(username, type, page))
         .then((result) => {
           this.setState({
-            [type]: result.map((repo) => {
-              return {
-                name: repo.name,
-                link: repo.html_url
-              }
-            })
+            [type]: {
+                repos: result.map((repo) => {
+                  return {
+                    name: repo.name,
+                    link: repo.html_url
+                }}),
+                pagination: this.state[type].pagination
+            }
           })
         })
     }
