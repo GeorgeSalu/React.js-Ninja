@@ -74,12 +74,13 @@ class App extends Component {
         .then((result) => {
           this.setState({
             [type]: {
-                repos: result.map((repo) => {
-                  return {
-                    name: repo.name,
-                    link: repo.html_url
-                }}),
-                pagination: this.state[type].pagination
+              repos: result.map((repo) => {
+                return {
+                  name: repo.name,
+                  link: repo.html_url
+                }
+              }),
+              pagination: this.state[type].pagination
             }
           })
         })
