@@ -17,19 +17,19 @@ const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarr
     {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
     {!!repos.length &&
-    <Repos
-      className='repos'
-      title='Repositorios:'
-      repos={repos}
-        />
+      <Repos
+        className='repos'
+        title='Repositorios:'
+        repos={repos}
+          />
       }
 
     {!!starred.length &&
-    <Repos
-      className='starred'
-      title='Favoritos:'
-      repos={starred}
-        />
+      <Repos
+        className='starred'
+        title='Favoritos:'
+        repos={starred}
+          />
       }
 
   </div>
