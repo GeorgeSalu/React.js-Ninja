@@ -5,25 +5,18 @@ import AppContent from './components/app-content'
 
 import ajax from '@fdaciuk/ajax'
 
+const initialReposState = {
+  repos: [],
+  pagination: {}
+}
+
 class App extends Component {
   constructor () {
     super()
     this.state = {
       userinfo: null,
-      repos: {
-        repos: [],
-        pagination: {
-          total: 1,
-          activePage: 1
-        }
-      },
-      starred: {
-        repos: [],
-        pagination: {
-          total: 1,
-          activePage: 1
-        }
-      },
+      repos: initialReposState,
+      starred: initialReposState,
       isFetching: false
     }
 
@@ -59,8 +52,8 @@ class App extends Component {
               followers: result.followers,
               following: result.following
             },
-            repos: {},
-            starred: {}
+            repos: initialReposState,
+            starred: initialReposState
           })
         })
         .always(() => this.setState({ isFetching: false }))
