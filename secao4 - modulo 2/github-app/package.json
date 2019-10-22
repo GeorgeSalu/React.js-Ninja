@@ -45,8 +45,7 @@
       "test",
       "it",
       "describe",
-      "PropTypes",
-      "onClick"
+      "PropTypes"
     ]
   }
 }
