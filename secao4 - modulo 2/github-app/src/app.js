@@ -73,7 +73,10 @@ class App extends Component {
                   link: repo.html_url
                 }
               }),
-              pagination: this.state[type].pagination
+              pagination: {
+                ...this.state[type].pagination,
+                activePage: page
+              }
             }
           })
         })
