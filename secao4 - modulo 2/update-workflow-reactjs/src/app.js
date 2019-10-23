@@ -1,57 +1,25 @@
 'use strict'
 
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import MessageList from 'components/message-list'
 
 import './css/style.css'
 
 class App extends PureComponent {
   constructor () {
     super()
-
-    let subscriptions = []
-
-    const subscribe = (f) => {
-      subscriptions.push(f)
-      return () => {
-        subscriptions = subscriptions.filter((func) => func !== f)
-      }
-    }
-
-    const setColor = (color) => (e) => {
-      this.store.color = color
-      subscriptions.forEach(f => f())
-    }
-
-    this.store = {
-      color: 'purple',
-      setColor,
-      subscribe
-    }
-  }
-
-  getChildContext () {
-    return {
-      store: this.store
+    this.state = {
+      title: 'React App',
+      Component: 'div'
     }
   }
 
   render () {
     return (
-      <MessageList
-        messages={[
-          { text: 'hey', color: 'orange' },
-          { text: 'ho', color: 'lightblue' },
-          { text: `let's go`, color: 'red' }
-        ]}
-      />
+      <div>
+        <this.state.Component>{this.state.title}</this.state.Component>
+      </div>
     )
   }
-}
-
-App.childContextTypes = {
-  store: PropTypes.object
 }
 
 export default App
