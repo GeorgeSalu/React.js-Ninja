@@ -1,5 +1,5 @@
 'use strict'
-
+/*
 const promise = new Promise((resolve, reject) => {
   resolve('resolvida')
 })
@@ -15,3 +15,4 @@ fs.readFile('../package.json', 'utf-8', (err, result) => {
   if(err) return console.log('ERROR', err)
   console.log(result)
 })
+*/
