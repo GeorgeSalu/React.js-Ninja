@@ -1,18 +1,25 @@
 'use strict'
-/*
-const promise = new Promise((resolve, reject) => {
-  resolve('resolvida')
-})
 
-promise
-  .then((result) => console.log(result))
-  .catch((error) => console.log(error))
+import React, { PureComponent } from 'react'
 
+import './css/style.css'
 
-const fs = require('fs')
+class App extends PureComponent {
+  constructor () {
+    super()
+    this.state = {
+      title: 'React App',
+      Component: 'div'
+    }
+  }
 
-fs.readFile('../package.json', 'utf-8', (err, result) => {
-  if(err) return console.log('ERROR', err)
-  console.log(result)
-})
-*/
+  render () {
+    return (
+      <div>
+        <this.state.Component>{this.state.title}</this.state.Component>
+      </div>
+    )
+  }
+}
+
+export default App
