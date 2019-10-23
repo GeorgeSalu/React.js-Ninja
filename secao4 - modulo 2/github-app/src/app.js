@@ -7,7 +7,10 @@ import ajax from '@fdaciuk/ajax'
 
 const initialReposState = {
   repos: [],
-  pagination: {}
+  pagination: {
+    total: 1,
+    activePage: 1
+  }
 }
 
 class App extends Component {
@@ -64,7 +67,9 @@ class App extends Component {
     return (e) => {
       const username = this.state.userinfo.login
       ajax().get(this.getGitHubApiUrl(username, type, page))
-        .then((result) => {
+        .then((result, xhr) => {
+          const linkHeader = xhr.getResponseHeader('Link') || ''
+
           this.setState({
             [type]: {
               repos: result.map((repo) => {
