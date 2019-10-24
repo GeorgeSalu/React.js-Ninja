@@ -41,6 +41,7 @@ module.exports = {
       )
     }),
 
+    // chuncks no arquivo vendor
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       chunks: ['main'],
