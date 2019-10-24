@@ -9,7 +9,10 @@ const CleanPlugin = require('clean-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = {
-  entry: common.entry,
+  entry: {
+    app: common.entry,
+    vendor: ['react','react-dom']
+  },
 
   output: common.output,
 
