@@ -1,11 +1,35 @@
 'use strict'
 
-import React from 'react'
+import React, { Component } from 'react'
 
-const App = React.createClass({
-  render: function () {
-    return <h1>Titulo react</h1>
+
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      title: '...'
+    }
   }
-})
+
+  getTitle() {
+    return new Promise((resolve, reject) => {
+      resolve('My app with Promisse')
+    })
+  }
+
+  componentDidMount() {
+    this.getTitle().then((result) => {
+      this.setState({ title: result })
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.title}
+      </div>
+    )
+  }
+}
 
 export default App
