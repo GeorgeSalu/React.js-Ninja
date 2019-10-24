@@ -2,28 +2,25 @@
 
 import React, { Component } from 'react'
 
-
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       title: '...'
     }
   }
 
-  getTitle() {
+  getTitle () {
     return new Promise((resolve, reject) => {
       resolve('My app with Promisse')
     })
   }
 
-  componentDidMount() {
-    this.getTitle().then((result) => {
-      this.setState({ title: result })
-    })
+  async componentDidMount () {
+    this.setState({ title: await this.getTitle() })
   }
 
-  render() {
+  render () {
     return (
       <div>
         {this.state.title}
