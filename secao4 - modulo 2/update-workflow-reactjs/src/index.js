@@ -1,25 +1,25 @@
 'use strict'
 
-import React, { PureComponent } from 'react'
+import React from 'react'
+import { render } from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import App from './app'
 
-import './css/style.css'
-
-class App extends PureComponent {
-  constructor () {
-    super()
-    this.state = {
-      title: 'React App',
-      Component: 'div'
-    }
-  }
-
-  render () {
-    return (
-      <div>
-        <this.state.Component>{this.state.title}</this.state.Component>
-      </div>
+const renderApp = (NextApp) => {
+  render(
+    <AppContainer>
+      <App />
+    </AppContainer>,
+        document.querySelector('[data-js="app"]')
     )
-  }
 }
 
-export default App
+renderApp(App)
+
+if (module.hot) {
+  module.hot.accept('./app', () => {
+    const NextApp = require('./app').default
+
+    renderApp(NextApp)
+  })
+}

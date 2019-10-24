@@ -1,25 +1,11 @@
 'use strict'
 
-import React, { PureComponent } from 'react'
+import React from 'react'
 
-import './css/style.css'
-
-class App extends PureComponent {
-  constructor () {
-    super()
-    this.state = {
-      title: 'React App',
-      Component: 'div'
-    }
+const App = React.createClass({
+  render: function () {
+    return <h1>Titulo react</h1>
   }
-
-  render () {
-    return (
-      <div>
-        <this.state.Component>{this.state.title}</this.state.Component>
-      </div>
-    )
-  }
-}
+})
 
 export default App
