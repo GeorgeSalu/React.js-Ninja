@@ -31,6 +31,7 @@ module.exports = {
     test: /\.js$/,
     include: paths.src,
     use: {
+      //corrige erro de lint ao usar import() dinamico
       loader: 'standard-loader',
       options: {
         parser: 'babel-eslint'
