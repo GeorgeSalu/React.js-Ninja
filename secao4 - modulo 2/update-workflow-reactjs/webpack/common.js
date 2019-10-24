@@ -2,6 +2,7 @@
 
 const { join } = require('path')
 
+//centralizando paths do webpack no common.js
 const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
