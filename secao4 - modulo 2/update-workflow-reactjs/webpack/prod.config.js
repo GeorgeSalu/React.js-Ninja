@@ -31,6 +31,7 @@ module.exports = {
       }
     }),
 
+    // separando arquivos de produção
     new webpack.optimize.CommonsChunkPlugin({
       name: 'react-build',
       chunks: ['main'],
