@@ -6,7 +6,8 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      title: '...'
+      title: '...',
+      Component: 'div'
     }
   }
 
@@ -17,13 +18,16 @@ class App extends Component {
   }
 
   async componentDidMount () {
+    //import dinamico
+    //const title = await import('components/title')
+
     this.setState({ title: await this.getTitle() })
   }
 
   render () {
     return (
       <div>
-        {this.state.title}
+        <this.state.Component>{this.state.title}</this.state.Component>
       </div>
     )
   }
