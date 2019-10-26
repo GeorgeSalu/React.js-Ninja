@@ -8,6 +8,12 @@ module.exports = {
     output: {
         path: '.',
         filename: 'bundle.js'
-    }
+    },
 
+    module: {
+        rules: [{
+            test: /\.text/,
+            use: 'file-loader'
+        }]
+    }
 }
