@@ -13,7 +13,7 @@ module.exports = {
     module: {
         rules: [{
             test: /\.text/,
-            use: 'file-loader'
+            use: 'url-loader'
         }]
     }
 }

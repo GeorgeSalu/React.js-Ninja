@@ -1,5 +1,5 @@
 'use strict'
 
-import a from './a'
+import a from './name.txt'
 
 console.log(a)
