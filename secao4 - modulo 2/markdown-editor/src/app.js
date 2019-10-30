@@ -3,17 +3,18 @@
 import React, { Component } from 'react'
 
 import marked from 'marked'
-import hljs from 'highlight.js'
 
 import 'normalize.css'
 import './css/style.css'
 import MarkdownEditor from './mrkdown-editor'
 
 // colorindo codigo fonte (markdonw) lib : highlight.js@9.10.0
-marked.setOptions({
-  highlight: (code) => {
-    return hljs.highlightAuto(code).value
-  }
+import('highlight.js').then((hljs) => {
+  marked.setOptions({
+    highlight: (code) => {
+      return hljs.highlightAuto(code).value
+    }
+  })
 })
 
 class App extends Component {
