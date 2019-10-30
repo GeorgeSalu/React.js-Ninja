@@ -2,6 +2,7 @@
 
 import React,{ Component } from 'react'
 
+import 'normalize.css'
 import './css/style.css'
 import MarkdownEditor from './mrkdown-editor'
 
