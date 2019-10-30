@@ -51,6 +51,7 @@ module.exports = {
     use: ['style-loader', 'css-loader']
   },
 
+  // conf file-loader
   fileLoader: {
     test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|txt)(\?.*)?$/,
     include: paths.src,
@@ -62,6 +63,7 @@ module.exports = {
     }
   },
 
+  // conf url-loader
   urlLoader: {
     test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
     include: paths.src,
