@@ -6,6 +6,7 @@ import './css/style.css'
 import MarkdownEditor from './mrkdown-editor'
 
 class App extends Component {
+
   constructor() {
     super()
     this.state = { value: '' }
@@ -22,8 +23,6 @@ class App extends Component {
     }
 
   }
-
-
 
   render() {
     return (
