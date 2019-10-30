@@ -8,6 +8,7 @@ module.exports = (config, env) => {
 
   const preloaders = Object.assign({}, common.standardPreLoader, {
     use: undefined,
+    // preloader do storybook
     loader: common.standardPreLoader.use.loader
   })
 
