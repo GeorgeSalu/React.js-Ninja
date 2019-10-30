@@ -3,10 +3,17 @@
 import React, { Component } from 'react'
 
 import marked from 'marked'
+import hljs from 'highlight.js'
 
 import 'normalize.css'
 import './css/style.css'
 import MarkdownEditor from './mrkdown-editor'
+
+marked.setOptions({
+  highlight: (code) => {
+    return hljs.highlightAuto(code).value
+  }
+})
 
 class App extends Component {
 
