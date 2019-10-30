@@ -9,6 +9,7 @@ import 'normalize.css'
 import './css/style.css'
 import MarkdownEditor from './mrkdown-editor'
 
+// colorindo codigo fonte (markdonw) lib : highlight.js@9.10.0
 marked.setOptions({
   highlight: (code) => {
     return hljs.highlightAuto(code).value
