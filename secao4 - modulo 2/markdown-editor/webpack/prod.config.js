@@ -29,6 +29,7 @@ module.exports = {
       }
     }),
 
+    //  melhorando bundle de produção
     new webpack.optimize.CommonsChunkPlugin({
       name: 'react-build',
       chunks: ['main'],
@@ -38,6 +39,7 @@ module.exports = {
       )
     }),
 
+    //  melhorando bundle de produção
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       chunks: ['main'],
