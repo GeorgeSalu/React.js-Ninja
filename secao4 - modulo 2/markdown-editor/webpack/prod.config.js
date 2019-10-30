@@ -6,6 +6,7 @@ const common = require('./common')
 const HtmlPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanPlugin = require('clean-webpack-plugin')
+// plugin do webpack para analisar bundle de produção
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = {
