@@ -48,6 +48,7 @@ module.exports = {
       )
     }),
 
+    //  ordenando os scripts no html
     new HtmlPlugin(Object.assign({}, common.htmlPluginConfig, {
       minify: { collapseWhitespace: true },
 
