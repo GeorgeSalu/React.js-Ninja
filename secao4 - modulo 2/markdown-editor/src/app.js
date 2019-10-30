@@ -9,14 +9,13 @@ class App extends Component {
     super()
     this.state = { value: '' }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+    this.handleSubmit = (e) =>  {
+      e.preventDefault()
 
-  handleSubmit(e) {
-    e.preventDefault()
-    this.setState({
-      value: e.target.textarea.value
-    })
+      this.setState({
+        value: e.target.textarea.value
+      })
+    }
   }
 
   render() {
@@ -27,7 +26,9 @@ class App extends Component {
           <button type='submit'>Renderixar markup</button>
         </form>
 
-        <div className='view' />
+        <div className='view' >
+          {this.state.value}
+        </div>
       </div>
     )
   }
