@@ -46,7 +46,12 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    this.handleSave()
+    clearInterval(this.timer)
+    this.timer = setInterval(this.handleSave(), 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer)
   }
 
   render () {
