@@ -45,6 +45,10 @@ class App extends Component {
     })
   }
 
+  componentDidUpdate() {
+    this.handleSave()
+  }
+
   render () {
     return (
       <MarkdownEditor
