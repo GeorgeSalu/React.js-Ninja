@@ -83,7 +83,7 @@ module.exports = {
   },
 
   // resolve: common.resolve
-
+  // preact e preact-compat para reduzir o bundle de prod
   resolve: {
     alias: Object.assign({}, common.resolve.alias, {
       'react': 'preact-compat',
