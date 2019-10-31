@@ -34,6 +34,13 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    const value = localStorage.getItem('md')
+    this.setState({
+      value
+    })
+  }
+
   render () {
     return (
       <MarkdownEditor
