@@ -6,7 +6,7 @@ import marked from 'marked'
 
 import 'normalize.css'
 import './css/style.css'
-import MarkdownEditor from './mrkdown-editor'
+import MarkdownEditor from './components/mrkdown-editor'
 
 // colorindo codigo fonte (markdonw) lib : highlight.js@9.10.0
 import('highlight.js').then((hljs) => {
