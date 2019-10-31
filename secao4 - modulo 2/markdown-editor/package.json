@@ -35,6 +35,8 @@
     "jest-cli": "^18.1.0",
     "marked": "^0.7.0",
     "normalize.css": "^8.0.1",
+    "preact": "^7.2.1",
+    "preact-compat": "^3.14.3",
     "react-hot-loader": "3.0.0-beta.6",
     "snazzy": "^6.0.0",
     "standard": "^8.6.0",
@@ -48,8 +50,6 @@
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
-    "preact": "^7.2.1",
-    "preact-compat": "^3.14.3",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
