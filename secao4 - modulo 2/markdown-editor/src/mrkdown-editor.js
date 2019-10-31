@@ -4,6 +4,8 @@ import React, { PropTypes } from 'react'
 
 const MarkdownEditor = ({ value, handleChange, getMarkup }) => (
   <div className='editor'>
+    <button onClick={() => localStorage.setItem('md', value)}>Salvar</button>
+
     <textarea name='textarea' value={value} onChange={handleChange} autoFocus />
     <button type='submit'>Renderixar markup</button>
 
