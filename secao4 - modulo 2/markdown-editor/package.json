@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npm dev",
+    "start": "cross-env NODE_ENV=production node index.js",
     "dev": "webpack-dashboard -- node server.js",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch",
