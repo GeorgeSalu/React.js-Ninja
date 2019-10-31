@@ -8,7 +8,7 @@ const MarkdownEditorHeader = ({ isSaving, handleRemove }) => (
       {isSaving ? 'Salvando ...' : 'Salvo'}
     </p>
 
-    <button onClick={handleRemove}>Remover</button>
+    <button onClick={handleRemove} className='button-remove'>Remover</button>
   </header>
 )
 
