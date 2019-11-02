@@ -49,6 +49,10 @@ class App extends Component {
     this.handleRemove = () => {
       localStorage.removeItem('md')
     }
+
+    this.handleCreate = () => {
+
+    }
   }
 
   componentDidMount() {
@@ -73,7 +77,8 @@ class App extends Component {
         getMarkup={this.getMarkup}
         handleSave={this.handleSave}
         isSaving={this.state.isSaving}
-        handleRemove={this.handleRemove} />
+        handleRemove={this.handleRemove}
+        handleCreate={this.handleCreate} />
     )
   }
 }
