@@ -51,7 +51,12 @@ class App extends Component {
     }
 
     this.handleCreate = () => {
+      this.setState({ value: '' })
+      this.textarea.focus()
+    }
 
+    this.textareaRef = (node) => {
+      this.textarea = node
     }
   }
 
@@ -78,7 +83,8 @@ class App extends Component {
         handleSave={this.handleSave}
         isSaving={this.state.isSaving}
         handleRemove={this.handleRemove}
-        handleCreate={this.handleCreate} />
+        handleCreate={this.handleCreate}
+        textareaRef={this.textareaRef} />
     )
   }
 }
