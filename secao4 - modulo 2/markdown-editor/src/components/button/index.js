@@ -1,6 +1,6 @@
 'use strict'
 
-import React,{ PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import './button.css'
 
 const Button = ({ onClick, children, kind }) => (
@@ -8,7 +8,6 @@ const Button = ({ onClick, children, kind }) => (
     {children}
   </button>
 )
-
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,

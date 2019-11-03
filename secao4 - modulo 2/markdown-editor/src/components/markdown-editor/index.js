@@ -3,7 +3,7 @@
 import React, { PropTypes } from 'react'
 import Header from './header'
 
-const MarkdownEditor = ({ value, handleChange, getMarkup,textareaRef, ...props }) => (
+const MarkdownEditor = ({ value, handleChange, getMarkup, textareaRef, ...props }) => (
   <section className='editor'>
     <Header {...props} />
     <textarea name='textarea' value={value} onChange={handleChange} autoFocus ref={textareaRef} />
