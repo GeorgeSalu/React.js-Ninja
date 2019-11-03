@@ -2,6 +2,7 @@
 
 import React, { PropTypes } from 'react'
 import Button from 'components/button'
+import SaveMessage from 'components/save-message'
 
 const MarkdownEditorHeader = ({ isSaving, handleRemove, handleCreate }) => (
   <header className='editor-header'>
