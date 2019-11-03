@@ -7,6 +7,7 @@ import marked from 'marked'
 import 'normalize.css'
 import './css/style.css'
 import MarkdownEditor from 'views/mrkdown-editor'
+import {v4} from 'node-uuid'
 
 // colorindo codigo fonte (markdonw) lib : highlight.js@9.10.0
 import('highlight.js').then((hljs) => {
@@ -28,7 +29,8 @@ class App extends Component {
 
     this.handleChange = (e) => {
       this.setState({
-        value: e.target.value,
+        value: '',
+        id: v4(),
         isSaving: null
       })
     }
@@ -38,8 +40,8 @@ class App extends Component {
     }
 
     this.handleSave = () => {
-      localStorage.setItem('md', this.state.value)
       if(this.state.isSaving) {
+        localStorage.setItem('md', this.state.value)
         this.setState({
           isSaving: false
         })
