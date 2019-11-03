@@ -11,3 +11,15 @@ stories.add('SaveMessage with isSaging == null', () => {
     <SaveMessage isSaving={null} />
   </div>
 })
+
+stories.add('SaveMessage with isSaging == true', () => {
+  <div>
+    <SaveMessage isSaving />
+  </div>
+})
+
+stories.add('SaveMessage with isSaging == false', () => {
+  <div>
+    <SaveMessage isSaving={false} />
+  </div>
+})
