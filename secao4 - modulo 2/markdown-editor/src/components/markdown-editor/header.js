@@ -4,9 +4,11 @@ import React, { PropTypes } from 'react'
 
 const MarkdownEditorHeader = ({ isSaving, handleRemove, handleCreate }) => (
   <header className='editor-header'>
-    <p className='save-message'>
-      {isSaving ? 'Salvando ...' : 'Salvo'}
-    </p>
+    {isSaving !== null && (
+      <p className='save-message'>
+        {isSaving ? 'Salvando ...' : 'Salvo'}
+      </p>
+    )}
 
     <button onClick={handleCreate}>
       Criar novo
@@ -18,7 +20,6 @@ const MarkdownEditorHeader = ({ isSaving, handleRemove, handleCreate }) => (
 )
 
 MarkdownEditorHeader.propTypes = {
-  isSaving: PropTypes.bool.isRequired,
   handleRemove: PropTypes.func.isRequired,
   handleCreate: PropTypes.func.isRequired
 }

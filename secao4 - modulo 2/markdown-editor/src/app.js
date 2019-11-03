@@ -29,7 +29,7 @@ class App extends Component {
     this.handleChange = (e) => {
       this.setState({
         value: e.target.value,
-        isSaving: true
+        isSaving: null
       })
     }
 
