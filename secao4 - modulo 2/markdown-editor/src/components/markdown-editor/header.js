@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { PropTypes } from 'react'
+import Button from 'components/button'
 
 const MarkdownEditorHeader = ({ isSaving, handleRemove, handleCreate }) => (
   <header className='editor-header'>
@@ -10,12 +11,12 @@ const MarkdownEditorHeader = ({ isSaving, handleRemove, handleCreate }) => (
       </p>
     )}
 
-    <button onClick={handleCreate}>
+    <Button onClick={handleCreate} kind='success'>
       Criar novo
-    </button>
-    <button onClick={handleRemove} className='button-remove'>
+    </Button>
+    <Button onClick={handleRemove} kind='danger'>
       Remover
-    </button>
+    </Button>
   </header>
 )
 
