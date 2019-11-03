@@ -3,9 +3,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './button.css'
+import css from 'strclass'
 
 const Button = ({ onClick, children, kind }) => (
-  <button onClick={onClick} className={`button -${kind}`}>
+  <button onClick={onClick} className={css({ success: kind === 'success', danger: kind === 'danger' }, 'button')}>
     {children}
   </button>
 )
