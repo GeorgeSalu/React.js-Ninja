@@ -22,9 +22,15 @@ class App extends Component {
 
   constructor () {
     super()
-    this.state = {
+    this.clearState = () => ({
       value: '',
-      isSaving: false
+      id: v4()
+    })
+
+
+    this.state = {
+      ...this.clearState(),
+      isSaving: null
     }
 
     this.handleChange = (e) => {
@@ -39,9 +45,14 @@ class App extends Component {
       return { __html: marked(this.state.value) }
     }
 
+    this.createNew = () => {
+      this.setState(this.clearState())
+      this.textarea.focus()
+    }
+
     this.handleSave = () => {
       if(this.state.isSaving) {
-        localStorage.setItem('md', this.state.value)
+        localStorage.setItem(this.state.id, this.state.value)
         this.setState({
           isSaving: false
         })
@@ -49,12 +60,12 @@ class App extends Component {
     }
 
     this.handleRemove = () => {
-      localStorage.removeItem('md')
+      localStorage.removeItem(this.state.id)
+      this.createNew()
     }
 
     this.handleCreate = () => {
-      this.setState({ value: '' })
-      this.textarea.focus()
+      this.createNew()
     }
 
     this.textareaRef = (node) => {
@@ -62,10 +73,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    const value = localStorage.getItem('md')
-    this.setState({ value: value || '' })
-  }
 
   componentDidUpdate() {
     clearInterval(this.timer)
