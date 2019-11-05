@@ -3,7 +3,7 @@
     "start": "npm dev",
     "dev": "webpack-dashboard -- node server.js",
     "test": "jest --coverage",
-    "test:watch": "yarn test -- --watch",
+    "test:watch": "npm test -- --watch",
     "lint": "standard --parser babel-eslint --verbose | snazzy",
     "lint:watch": "gulp",
     "lint:fix": "standard --fix",
