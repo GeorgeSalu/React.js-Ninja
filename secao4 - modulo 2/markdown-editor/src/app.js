@@ -71,6 +71,7 @@ class App extends Component {
     }
 
     this.handleRemove = () => {
+      // eslint-disable-next-line no-unused-vars
       const {[this.state.id]: id, ...files } = this.state.files
 
       localStorage.setItem('markdown-editor', JSON.stringify(files))
