@@ -30,7 +30,8 @@ class App extends Component {
 
     this.state = {
       ...this.clearState(),
-      isSaving: null
+      isSaving: null,
+      files: {}
     }
 
     this.handleChange = (e) => {
@@ -71,8 +72,26 @@ class App extends Component {
     this.textareaRef = (node) => {
       this.textarea = node
     }
+
+    this.handleOpenFile = (fileId) => () => {
+      this.setState({
+        value: this.state.files[fileId],
+        id: fileId
+      })
+    }
   }
 
+  componentDidMount() {
+    const files = Object.keys(localStorage)
+    this.setState({
+      files: files.reduce((acc, fileId) => {
+        return {
+          ...acc,
+          [fileId]: localStorage.getItem(fileId)
+        }
+      }, {})
+    })
+  }
 
   componentDidUpdate() {
     clearInterval(this.timer)
@@ -93,7 +112,9 @@ class App extends Component {
         isSaving={this.state.isSaving}
         handleRemove={this.handleRemove}
         handleCreate={this.handleCreate}
-        textareaRef={this.textareaRef} />
+        textareaRef={this.textareaRef}
+        files={this.state.files}
+        handleOpenFile={this.handleOpenFile} />
     )
   }
 }
