@@ -6,16 +6,28 @@ class App extends PureComponent {
   constructor() {
     super()
     this.state = {
-      color: 'purple'
+      color: {
+        otherColor: 'purple',
+        moreOtherColor: 'white'
+      }
+    }
+
+    this.handleClick = () => {
+      this.setState({
+        color: {
+          ...this.state.color,
+          otherColor: 'black'
+        }
+      })
     }
   }
 
   render () {
     return (
       <div>
-        <span>Color name: {this.state.color}</span>
+        <span>Color name: {this.state.color.otherColor}</span>
         <br />
-        <button onClick={() => this.setState({ color: 'black' })}>
+        <button onClick={this.handleClick}>
           Change color black
         </button>
       </div>
