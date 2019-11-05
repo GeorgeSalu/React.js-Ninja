@@ -53,17 +53,19 @@ class App extends Component {
 
     this.handleSave = () => {
       if(this.state.isSaving) {
-        const newFile = {
-          title: this.state.title || 'sem titulo',
-          content: this.state.value
+
+        const files = {
+          ...this.state.files,
+          [this.state.id]: {
+            title: this.state.title || 'sem titulo',
+            content: this.state.value
+          }
         }
-        localStorage.setItem(this.state.id, JSON.stringify(newFile))
+
+        localStorage.setItem('markdown-editor', JSON.stringify(files))
         this.setState({
           isSaving: false,
-          files: {
-            ...this.state.files,
-            [this.state.id]: newFile
-          }
+          files
         })
       }
     }
