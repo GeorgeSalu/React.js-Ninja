@@ -15,7 +15,7 @@
 
 ## Dependencies:
 
-- Node.js `>=` v6;
+- Node.js `>=` v8;
 
 ## Up and running
 
