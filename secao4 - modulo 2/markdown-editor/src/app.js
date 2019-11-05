@@ -65,7 +65,7 @@ class App extends Component {
       let files = {...this.state.files}
       delete files[this.state.id]
       this.setState({
-        files: {}
+        files
       })
       this.createNew()
     }
