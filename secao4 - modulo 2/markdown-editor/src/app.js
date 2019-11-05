@@ -62,6 +62,11 @@ class App extends Component {
 
     this.handleRemove = () => {
       localStorage.removeItem(this.state.id)
+      let files = {...this.state.files}
+      delete files[this.state.id]
+      this.setState({
+        files: {}
+      })
       this.createNew()
     }
 
