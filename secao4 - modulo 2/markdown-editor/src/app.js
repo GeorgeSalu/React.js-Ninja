@@ -24,6 +24,7 @@ class App extends Component {
     super()
     this.clearState = () => ({
       value: '',
+      title: '',
       id: v4()
     })
 
@@ -34,10 +35,9 @@ class App extends Component {
       files: {}
     }
 
-    this.handleChange = (e) => {
+    this.handleChange = (field) => (e) => {
       this.setState({
-        value: '',
-        id: v4(),
+        [field]: e.target.value,
         isSaving: null
       })
     }
@@ -54,7 +54,7 @@ class App extends Component {
     this.handleSave = () => {
       if(this.state.isSaving) {
         const newFile = {
-          title: 'sem titulo',
+          title: this.state.title || 'sem titulo',
           content: this.state.value
         }
         localStorage.setItem(this.state.id, JSON.stringify(newFile))
@@ -126,7 +126,7 @@ class App extends Component {
         textareaRef={this.textareaRef}
         files={this.state.files}
         handleOpenFile={this.handleOpenFile}
-        title={this.state.files[this.state.id].title} />
+        title={this.state.title} />
     )
   }
 }
