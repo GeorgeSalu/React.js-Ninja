@@ -13,7 +13,7 @@ class App extends PureComponent {
       color: 'purple'
     }
 
-    this.setColor = (color) => {
+    this.setColor = (color) => (e) => {
       this.setState({ color })
     }
   }
