@@ -13,15 +13,20 @@ class App extends PureComponent {
       color: 'purple'
     }
 
-    this.setColor = (color) => (e) => {
-      this.setState({ color })
+    this.setColor = (color, update) => (e) => {
+      this.store.color = color
+      update()
+    }
+
+    this.store = {
+      color: 'purple',
+      setColor: this.setColor
     }
   }
 
   getChildContext () {
     return {
-      color: this.state.color,
-      setColor: this.setColor
+      store: this.store
     }
   }
 
@@ -29,9 +34,9 @@ class App extends PureComponent {
     return (
       <MessageList
         messages={[
-          { text: 'hey' },
-          { text: 'ho' },
-          { text: 'lets go' }
+          { text: 'hey', color: 'orange' },
+          { text: 'ho', color: 'blue' },
+          { text: 'lets go', color: 'yellow' }
         ]}
       />
     )
@@ -39,8 +44,7 @@ class App extends PureComponent {
 }
 
 App.childContextTypes = {
-  color: PropTypes.string,
-  setColor: PropTypes.func
+  store: PropTypes.object
 }
 
 export default App
