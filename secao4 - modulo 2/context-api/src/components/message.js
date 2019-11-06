@@ -1,11 +1,11 @@
 'use strict'
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-const Message = (props, context) => {
-  <li style={{ background: context.color }}>{props.text}</li>
-}
+const Message = ({text}, {color}) => (
+  <li style={{ background: color }}>{text}</li>
+)
 
 /* class Message extends Component {
   render() {
