@@ -7,9 +7,21 @@ import PropTypes from 'prop-types'
 import './css/style.css'
 
 class App extends PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      color: 'purple'
+    }
+
+    this.setColor = (color) => {
+      this.setState({ color })
+    }
+  }
+
   getChildContext () {
     return {
-      color: 'purple'
+      color: this.state.color,
+      setColor: this.setColor
     }
   }
 
@@ -27,7 +39,8 @@ class App extends PureComponent {
 }
 
 App.childContextTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
+  setColor: PropTypes.func
 }
 
 export default App
