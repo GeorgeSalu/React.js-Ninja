@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import Message from 'components/message'
 
 class MessageList extends Component {
-  render() {
+  render () {
     return (
       <ul>
         {this.props.messages.map((message) => (

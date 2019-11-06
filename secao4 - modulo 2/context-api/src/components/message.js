@@ -7,13 +7,13 @@ const Message = (props, context) => {
   <li style={{ background: context.color }}>{props.text}</li>
 }
 
-/*class Message extends Component {
+/* class Message extends Component {
   render() {
     return (
       <li style={{ background: this.context.color }}>{this.props.text}</li>
     )
   }
-}*/
+} */
 
 Message.contextTypes = {
   color: PropTypes.string

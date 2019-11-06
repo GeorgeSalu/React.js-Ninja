@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import './css/style.css'
 
 class App extends PureComponent {
-  getChildContext() {
+  getChildContext () {
     return {
       color: 'purple'
     }
