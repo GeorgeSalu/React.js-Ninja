@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 
 class Message extends Component {
 
-  shouldComponentUpdate() {
+  shouldComponentUpdate () {
     return false
   }
 
-  render() {
+  render () {
     return (
       <li style={{ background: this.context.store.color }}>
         {this.props.text}

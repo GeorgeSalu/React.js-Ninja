@@ -5,7 +5,7 @@ import Message from 'components/message'
 
 class MessageList extends Component {
 
-  shouldComponentUpdate() {
+  shouldComponentUpdate () {
     return false
   }
 
