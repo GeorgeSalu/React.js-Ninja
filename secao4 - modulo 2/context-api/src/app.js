@@ -12,7 +12,7 @@ class App extends PureComponent {
 
     let subscriptions = []
 
-    //higher order function
+    // higher order function
     const subscribe = (f) => {
       subscriptions.push(f)
       return () => {
@@ -20,7 +20,7 @@ class App extends PureComponent {
       }
     }
 
-    //higher order function
+    // higher order function
     const setColor = (color) => (e) => {
       this.store.color = color
       subscriptions.forEach(f => {

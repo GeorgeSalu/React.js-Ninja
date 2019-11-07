@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react'
 
 const withContext = (Wrapper) => {
   class WithContext extends PureComponent {
-    render() {
+    render () {
       return (
         <Wrapper />
       )
