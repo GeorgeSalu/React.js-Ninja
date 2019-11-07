@@ -13,14 +13,18 @@ class App extends PureComponent {
       color: 'purple'
     }
 
-    this.setColor = (color, update) => (e) => {
+    const subscriptions = []
+    const subscribe = (f) => subscriptions.push(f)
+
+    this.setColor = (color) => (e) => {
       this.store.color = color
-      update()
+      subscriptions.forEach(f => f())
     }
 
     this.store = {
       color: 'purple',
-      setColor: this.setColor
+      setColor,
+      subscribe
     }
   }
 
