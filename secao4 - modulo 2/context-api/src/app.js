@@ -11,6 +11,8 @@ class App extends PureComponent {
     super()
 
     let subscriptions = []
+
+    //higher order function
     const subscribe = (f) => {
       subscriptions.push(f)
       return () => {
@@ -18,6 +20,7 @@ class App extends PureComponent {
       }
     }
 
+    //higher order function
     const setColor = (color) => (e) => {
       this.store.color = color
       subscriptions.forEach(f => {
