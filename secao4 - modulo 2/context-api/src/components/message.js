@@ -6,26 +6,14 @@ import after3s from './after3s'
 
 class Message extends Component {
 
-  componentDidMount () {
-    this.unsubscribe = this.context.store.subscribe(() => this.forceUpdate())
-  }
-
-  componentWillMount () {
-    this.unsubscribe()
-  }
-
   render () {
     return this.state.loading ? <div>Carregando....</div> : (
-      <li style={{ background: this.context.store.color }}>
+      <li style={{ background: this.props.store.color }}>
         {this.props.text}
-        <button onClick={this.context.store.setColor(this.props.color)}>Change color</button>
+        <button onClick={this.props.store.setColor(this.props.color)}>Change color</button>
       </li>
     )
   }
-}
-
-Message.contextTypes = {
-  store: PropTypes.object
 }
 
 export default after3s(Message)

@@ -1,14 +1,29 @@
 'use strict'
 
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 const withContext = (Wrapper) => {
+
   class WithContext extends PureComponent {
+
+    componentDidMount () {
+      this.unsubscribe = this.context.store.subscribe(() => this.forceUpdate())
+    }
+
+    componentWillMount () {
+      this.unsubscribe()
+    }
+
     render () {
       return (
-        <Wrapper />
+        <Wrapper {...this.props}/>
       )
     }
+  }
+
+  WithContext.contextTypes = {
+    store: PropTypes.object
   }
 
   return WithContext
