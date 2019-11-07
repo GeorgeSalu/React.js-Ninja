@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import after3s from './after3s'
 
 class Message extends Component {
 
@@ -13,12 +14,8 @@ class Message extends Component {
     this.unsubscribe()
   }
 
-  shouldComponentUpdate () {
-    return false
-  }
-
   render () {
-    return (
+    return this.state.loading ? <div>Carregando....</div> : (
       <li style={{ background: this.context.store.color }}>
         {this.props.text}
         <button onClick={this.context.store.setColor(this.props.color)}>Change color</button>
@@ -31,4 +28,4 @@ Message.contextTypes = {
   store: PropTypes.object
 }
 
-export default Message
+export default after3s(Message)
