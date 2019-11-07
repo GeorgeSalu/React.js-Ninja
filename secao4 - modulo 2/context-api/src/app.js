@@ -9,14 +9,14 @@ import './css/style.css'
 class App extends PureComponent {
   constructor () {
     super()
-    this.state = {
-      color: 'purple'
-    }
 
     const subscriptions = []
-    const subscribe = (f) => subscriptions.push(f)
+    const subscribe = (f) => {
+      subscriptions.push(f)
+      return () => subscriptions.filter((func) => func !== f)
+    }
 
-    this.setColor = (color) => (e) => {
+    const setColor = (color) => (e) => {
       this.store.color = color
       subscriptions.forEach(f => f())
     }

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 class Message extends Component {
 
   componentDidMount() {
-    this.context.store.subscribe(() => this.forceUpdate())
+    this.unsubscribe = this.context.store.subscribe(() => this.forceUpdate())
   }
 
   shouldComponentUpdate () {
