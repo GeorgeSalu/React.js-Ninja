@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 class Message extends Component {
 
-  componentDidMount() {
+  componentDidMount () {
     this.unsubscribe = this.context.store.subscribe(() => this.forceUpdate())
   }
 
