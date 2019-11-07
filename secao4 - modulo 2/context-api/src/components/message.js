@@ -9,6 +9,10 @@ class Message extends Component {
     this.unsubscribe = this.context.store.subscribe(() => this.forceUpdate())
   }
 
+  componentWillMount() {
+    this.unsubscribe()
+  }
+
   shouldComponentUpdate () {
     return false
   }
