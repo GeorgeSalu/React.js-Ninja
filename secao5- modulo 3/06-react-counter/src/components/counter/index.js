@@ -5,7 +5,7 @@ import Counter from './counter'
 
 class CounterContatiner extends PureComponent {
 
-  constructor() {
+  constructor () {
     super()
     this.state = {
       counter: 0
@@ -24,7 +24,7 @@ class CounterContatiner extends PureComponent {
     }
   }
 
-  render() {
+  render () {
     const { counter } = this.state
 
     return (
