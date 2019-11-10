@@ -12,3 +12,15 @@ const counter = (state = 0, action) => {
 const { createStore } = Redux
 const store = createStore(counter)
 
+store.subscribe(() => {
+  console.log('disparou uma ação')
+})
+
+console.log(store.getState())
+
+store.dispatch({ type: 'INCREMENT' })
+store.dispatch({ type: 'INCREMENT' })
+console.log(store.getState())
+
+store.dispatch({ type: 'DECREMENT' })
+console.log(store.getState())
