@@ -1,17 +1,10 @@
 'use strict'
 
-import React, { PureComponent } from 'react'
+import React from 'react'
+import Counter from 'components/counter'
 
-import './css/style.css'
-
-class App extends PureComponent {
-  render () {
-    return (
-      <div>
-        <h1>React js</h1>
-      </div>
-    )
-  }
-}
+const App = () => (
+  <Counter />
+)
 
 export default App
