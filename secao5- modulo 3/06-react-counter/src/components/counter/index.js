@@ -1,34 +1,15 @@
 'use strcit'
 
 import React, { PureComponent } from 'react'
-import Counter from './counter'
 import { connect } from 'react-redux'
 
-class CounterContatiner extends PureComponent {
-
-  constructor () {
-    super()
-
-    this.increment = () => {
-      this.props.dispatch({ type: 'INCREMENT' })
-    }
-
-    this.decrement = () => {
-      this.props.dispatch({ type: 'DECREMENT' })
-    }
-  }
-
-  render () {
-
-    return (
-      <Counter
-        counter={this.props.counter}
-        increment={this.increment}
-        decrement={this.decrement}
-      />
-    )
-  }
-}
+export const Counter = ({ counter, increment, decrement }) => (
+  <div>
+    <h1>{counter}</h1>
+    <button onClick={decrement}>-</button>
+    <button onClick={increment}>+</button>
+  </div>
+)
 
 const mapStateToProps = (state) => {
   return {
@@ -36,4 +17,16 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(CounterContatiner)
+const mapDispatchToProps = (dispatch) => ({
+
+    increment: () => {
+      dispatch({ type: 'INCREMENT' })
+    },
+
+    decrement: () => {
+      dispatch({ type: 'DECREMENT' })
+    }
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
