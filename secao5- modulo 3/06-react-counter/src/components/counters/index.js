@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 const Counters = ({ counter, increment, decrement }) => (
   <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-    {[0,0,0].map((item, index) => (
+    {[0, 0, 0].map((item, index) => (
       <Counter
         key={index}
         counter={counter}
