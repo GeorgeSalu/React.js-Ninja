@@ -9,5 +9,8 @@ export default (state, action) => {
       return state.filter((_, index) => {
         index !== action.index
       })
+
+    case 'INCREMENT':
+      return [1,0]
   }
 }
