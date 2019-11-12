@@ -1,7 +1,7 @@
 'use strict'
 
 export default (state, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_COUNTER':
       return state.concat(0)
 
@@ -11,6 +11,6 @@ export default (state, action) => {
       })
 
     case 'INCREMENT':
-      return [1,0]
+      return [1, 0]
   }
 }
