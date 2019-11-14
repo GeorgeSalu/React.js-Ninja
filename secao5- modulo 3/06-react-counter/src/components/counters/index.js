@@ -30,5 +30,4 @@ const mapDispatchToProps = (dispatch) => ({
   addCounter: () => dispatch({ type: ADD_COUNTER })
 })
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(Counters)
