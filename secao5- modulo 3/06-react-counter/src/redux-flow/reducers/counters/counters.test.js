@@ -63,3 +63,17 @@ it('should decrement an other counter', () => {
   const after = [0, 1, 0]
   expect(counters(before, action)).to.be.deep.equal(after)
 })
+
+it('should return same state if action is unknow', () => {
+  const before = deepFreeze([0, 0, 1])
+  const action = deepFreeze({ type: 'UNKNOWN' })
+  const after = [0, 1, 0]
+  expect(counters(before, action)).to.be.deep.equal(after)
+})
+
+it('should return initial state if last state is undefined', () => {
+  const before = undefined
+  const action = deepFreeze({})
+  const after = []
+  expect(counters(before, action)).to.be.deep.equal(after)
+})
