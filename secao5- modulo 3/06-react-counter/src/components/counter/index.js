@@ -1,6 +1,6 @@
 'use strcit'
 
-import React, { PureComponent } from 'react'
+import React from 'react'
 
 export const Counter = ({ counter, increment, decrement, removeCounter }) => (
   <div style={{ position: 'relative', border: '1px solid #000', padding: 5 }}>
