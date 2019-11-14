@@ -3,16 +3,19 @@
 import React from 'react'
 import {Counter} from 'components/counter'
 import { connect } from 'react-redux'
-import { ADD_COUNTER } from 'reducers/counters'
+import { ADD_COUNTER, REMOVE_COUNTER, INCREMENT, DECREMENT } from 'reducers/counters'
 
-const Counters = ({ counters, addCounter }) => (
+const Counters = ({ counters, addCounter, removeCounter, increment, decrement }) => (
   <div>
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       {counters.map((counter, index) => (
-        <Counter
-          key={index}
-          counter={counter}
-        />
+        <Counter {...{
+          key: index,
+          counter,
+          removeCounter: removeCounter(index),
+          increment: increment(index),
+          decrement: decrement(index)
+        }} />
       ))}
     </div>
 
@@ -27,7 +30,10 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  addCounter: () => dispatch({ type: ADD_COUNTER })
+  addCounter: () => dispatch({ type: ADD_COUNTER }),
+  removeCounter: (index) => () => dispatch({ type: REMOVE_COUNTER, index }),
+  increment: (index) => () => dispatch({ type: INCREMENT, inde }),
+  decrement: (index) => () => dispatch({ type: DECREMENT, inde })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counters)
