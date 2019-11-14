@@ -1,9 +1,9 @@
 'use strict'
 
-export const ADD_COUNTER = "ADD_COUNTER"
-export const REMOVE_COUNTER = "REMOVE_COUNTER"
-export const INCREMENT = "INCREMENT"
-export const DECREMENT = "DECREMENT"
+export const ADD_COUNTER = 'ADD_COUNTER'
+export const REMOVE_COUNTER = 'REMOVE_COUNTER'
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
 
 export default (state = [], action) => {
   switch (action.type) {
@@ -14,10 +14,10 @@ export default (state = [], action) => {
       return state.filter((_, index) => index !== action.index)
 
     case INCREMENT:
-      return state.map((c, i) => i === action.index ? c + 1: c)
+      return state.map((c, i) => i === action.index ? c + 1 : c)
 
     case DECREMENT:
-      return state.map((c, i) => i === action.index ? c -1 : c)
+      return state.map((c, i) => i === action.index ? c - 1 : c)
   }
 
   return state
