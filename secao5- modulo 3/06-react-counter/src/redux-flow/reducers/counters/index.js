@@ -9,12 +9,10 @@ export default (state = [], action) => {
       return state.filter((_, index) => index !== action.index)
 
     case 'INCREMENT':
-      return state.map((counter, index) => {
-        return index === action.index ? counter + 1 : counter
-      })
+      return state.map((c, i) => i === action.index ? c + 1: c)
 
     case 'DECREMENT':
-      return state.map((c, i) => index === action.index ? c -1 : c)
+      return state.map((c, i) => i === action.index ? c -1 : c)
   }
 
   return state
