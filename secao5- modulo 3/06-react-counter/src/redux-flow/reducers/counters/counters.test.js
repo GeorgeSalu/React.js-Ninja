@@ -4,6 +4,7 @@ import counters from './index'
 import { expect } from 'chai'
 import deepFreeze from 'deep-freeze'
 import {
+  initialState,
   ADD_COUNTER,
   REMOVE_COUNTER,
   INCREMENT,
@@ -80,6 +81,6 @@ it('should return same state if action is unknow', () => {
 it('should return initial state if last state is undefined', () => {
   const before = undefined
   const action = deepFreeze({})
-  const after = []
+  const after = initialState
   expect(counters(before, action)).to.be.deep.equal(after)
 })

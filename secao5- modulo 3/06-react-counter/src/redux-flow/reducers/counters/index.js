@@ -5,6 +5,8 @@ export const REMOVE_COUNTER = 'REMOVE_COUNTER'
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 
+export const initialState = []
+
 export default (state = [], action) => {
   switch (action.type) {
     case ADD_COUNTER:
