@@ -3,13 +3,17 @@
 import counters from './index'
 import { expect } from 'chai'
 import deepFreeze from 'deep-freeze'
+
 import {
-  initialState,
+  initialState
+} from './index'
+
+import {
   ADD_COUNTER,
   REMOVE_COUNTER,
   INCREMENT,
   DECREMENT
-} from './index'
+} from './actions'
 
 it('counters should be a function', () => {
   expect(counters).to.be.a('function')
