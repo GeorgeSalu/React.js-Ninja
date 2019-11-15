@@ -11,12 +11,11 @@ it('should todos be a function', () => {
 
 it('should add a todo', () => {
   const before = deepFreeze([])
-  const action = {
-    type: ADD_TODO
-  }
-  const after = {
-    id: 0,
-    text: 'hey',
-    completed: false
-  }
+  const action = deepFreeze({
+    type: ADD_TODO,
+    payload: {  id: 0,  text: 'Hey' }
+  })
+  const after = [{  id: 0,  text: 'hey',  completed: false}]
+
+  expect(todos(before, after)).to.be.deep.equal(after)
 })
