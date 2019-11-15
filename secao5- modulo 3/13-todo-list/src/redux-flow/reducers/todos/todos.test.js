@@ -2,7 +2,7 @@
 
 import { expect } from 'chai'
 import deepFreeze from 'deep-freeze'
-import todos from './index'
+import todos, { initialState } from './index'
 import { ADD_TODO, TOGGLE_TODO } from './actions'
 
 it('should todos be a function', () => {
@@ -95,3 +95,10 @@ it('should return the latest when action is unknow', () => {
   expect(todos(before, action)).to.be.deep.equal(after)
 })
 
+it('should return initialState when state before ', () => {
+  const before = undefined
+  const action = deepFreeze({})
+  const after = initialState
+
+  expect(todos(before, action)).to.be.deep.equal(after)
+})
