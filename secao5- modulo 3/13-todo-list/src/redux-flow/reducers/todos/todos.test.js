@@ -32,5 +32,5 @@ it('should add a new todo item', () => {
   })
   const after = [{  id: 0,  text: 'Hey',  completed: false}, {  id: 1,  text: 'Ho',  completed: false}]
 
-  expect(todos(before, after)).to.be.deep.equal(after)
+  expect(todos(before, action)).to.be.deep.equal(after)
 })
