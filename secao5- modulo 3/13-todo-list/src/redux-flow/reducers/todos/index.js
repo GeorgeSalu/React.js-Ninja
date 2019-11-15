@@ -1,12 +1,11 @@
 'use strict'
 
-import { TOGGLE_TODO, ADD_TODO } from "./actions"
+import { TOGGLE_TODO, ADD_TODO } from './actions'
 
 const initialState = []
 
 const todos = (state = initialState, action) => {
-
-  switch(action.type) {
+  switch (action.type) {
     case ADD_TODO:
       return state.concat({
         id: action.payload.id,
@@ -16,8 +15,7 @@ const todos = (state = initialState, action) => {
 
     case TOGGLE_TODO:
       return state.map((todo) => {
-
-        if(todo.id !== action.payload.id) {
+        if (todo.id !== action.payload.id) {
           return todo
         }
 
@@ -25,10 +23,8 @@ const todos = (state = initialState, action) => {
           ...todo,
           completed: !todo.completed
         }
-
       })
   }
-
 }
 
 export default todos
