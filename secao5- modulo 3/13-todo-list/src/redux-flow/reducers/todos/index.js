@@ -4,7 +4,7 @@ import { TOGGLE_TODO, ADD_TODO } from "./actions"
 
 const initialState = []
 
-const todos = (state, action) => {
+const todos = (state = initialState, action) => {
 
   switch(action.type) {
     case ADD_TODO:
