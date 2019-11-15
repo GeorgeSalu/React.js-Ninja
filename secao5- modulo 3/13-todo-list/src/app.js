@@ -4,7 +4,13 @@ import React from 'react'
 
 const App = () => (
   <div>
-    <h1>Reactjs</h1>
+    <input type='text' />
+
+    <ul>
+      <li className='completed'>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
   </div>
 )
 
