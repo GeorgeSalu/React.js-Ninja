@@ -1,15 +1,14 @@
 'use strict'
 
 import React from 'react'
-import { connect } from  'react-redux'
+import { connect } from 'react-redux'
 
 const App = ({ todos, handleAddTodo }) => (
   <div>
     <form onSubmit={handleAddTodo}>
-      <input type='text' name='todo'/>
+      <input type='text' name='todo' />
       <button type='submit'>Adicionar</button>
     </form>
-
 
     <ul>
       <li style={{ textDecoration: 'line-through' }}>Item 1</li>
