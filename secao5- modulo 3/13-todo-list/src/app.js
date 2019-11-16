@@ -13,7 +13,8 @@ const App = () => (
     </ul>
 
     <div>
-      <a>Todos</a> | <a>Finalizados</a> | <a href=''>A fazer</a>
+      <h3>Mostrar</h3>
+      <span>Todos</span> | <a href=''>Finalizados</a> | <a href=''>A fazer</a>
     </div>
   </div>
 )
