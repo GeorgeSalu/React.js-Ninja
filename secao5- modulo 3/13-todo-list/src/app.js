@@ -3,7 +3,7 @@
 import React from 'react'
 import { connect } from  'react-redux'
 
-const App = (props) => (
+const App = ({ todos, handleAddTodo }) => (
   <div>
     <form onSubmit={handleAddTodo}>
       <input type='text' name='todo'/>
@@ -28,4 +28,14 @@ const mapStateToProps = (state) => ({
   todos: state
 })
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = (dispatch) => ({
+  handleAddTodo: (e) => {
+    e.preventDefault()
+    dispatch({
+      type: 'ADD_TODO',
+      payload: { id: 0, text: 'Hey' }
+    })
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
