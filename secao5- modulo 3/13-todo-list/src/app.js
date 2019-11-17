@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo , toggleTodo } from 'reducers/todos/action-creators'
+import { addTodo, toggleTodo } from 'reducers/todos/action-creators'
 
 const App = ({ todos, handleAddTodo, handleToggleTodo }) => (
   <div>
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   handleToggleTodo: (id) => (e) => {
-      dispatch(toggleTodo(id))
+    dispatch(toggleTodo(id))
   }
 })
 
