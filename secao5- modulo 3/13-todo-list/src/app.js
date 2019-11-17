@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import { addTodo } from 'reducers/todos/action-creators'
 
 const App = ({ todos, handleAddTodo }) => (
   <div>
@@ -30,10 +31,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   handleAddTodo: (e) => {
     e.preventDefault()
-    dispatch({
-      type: 'ADD_TODO',
-      payload: { id: 0, text: 'Hey' }
-    })
+    dispatch(addTodo(e.target.todo.value))
   }
 })
 
