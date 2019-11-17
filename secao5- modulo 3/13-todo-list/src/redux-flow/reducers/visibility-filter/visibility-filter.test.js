@@ -8,7 +8,7 @@ it('visibilityFilter should be a function', () => {
   expect(visibilityFilter).to.be.a('function')
 })
 
-it('should show just completed todos', () => {
+it('should show all todos', () => {
   const before = 'SHOW_COMPLETED'
   const action = deepFeeze({
     type: 'SET_VISIBILITY_FILTER',
