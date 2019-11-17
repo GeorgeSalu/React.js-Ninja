@@ -12,7 +12,7 @@ it('should show just completed todos', () => {
   const before = 'SHOW_COMPLETED'
   const action = deepFeeze({
     type: 'SET_VISIBILITY_FILTER',
-    payload: { filter: 'SHOW_AL' }
+    payload: { filter: 'SHOW_ALL' }
   })
   const after = 'SHOW_ALL'
 
