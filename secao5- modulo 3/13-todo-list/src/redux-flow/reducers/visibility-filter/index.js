@@ -1,5 +1,7 @@
 'use strict'
 
-const visibilityFilter = () => {}
+const visibilityFilter = () => {
+  return 'SHOW_ALL'
+}
 
 export default visibilityFilter
