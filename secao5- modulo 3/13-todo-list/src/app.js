@@ -12,9 +12,13 @@ const App = ({ todos, handleAddTodo }) => (
     </form>
 
     <ul>
-      <li style={{ textDecoration: 'line-through' }}>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      {todos.map((todo) => (
+
+        <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+          {todo.text}
+        </li>
+
+      ))}
     </ul>
 
     <div>
