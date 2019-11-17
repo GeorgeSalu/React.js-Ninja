@@ -14,8 +14,12 @@ const App = ({ todos, handleAddTodo, handleToggleTodo }) => (
     <ul>
       {todos.map((todo) => (
 
-        <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
-          onClick={handleToggleTodo(todo.id)}>
+        <li
+          key={todo.id}
+          style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+          onClick={handleToggleTodo(todo.id)}
+        >
+
           {todo.text}
         </li>
 
