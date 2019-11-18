@@ -10,9 +10,9 @@ const rootReducer = (state = {}, action) => {
     todos: reducerTodos(state.todos, action),
     visibilityFilter: reducerVisibilityFilter(state.visibilityFilter, action)
   }
-}*/
+} */
 
 export default combineReducers({
-    todos: reducerTodos,
-    visibilityFilter: reducerVisibilityFilter
+  todos: reducerTodos,
+  visibilityFilter: reducerVisibilityFilter
 })
