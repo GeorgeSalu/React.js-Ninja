@@ -6,15 +6,7 @@ import { AppContainer } from 'react-hot-loader'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './app'
-import reducerTodos from './redux-flow/reducers/todos'
-import reducerVisibilityFilter from 'reducers/visibility-filter'
-
-const reducer = (state, action) => {
-  return {
-    todos: reducerTodos(state.todos, action),
-    visibilityFilter: reducerVisibilityFilter(state.visibilityFilter, action)
-  }
-}
+import reducer from 'reducers'
 
 const store = createStore(reducer)
 
