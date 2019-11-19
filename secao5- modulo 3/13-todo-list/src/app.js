@@ -3,13 +3,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo, toggleTodo } from 'reducers/todos/action-creators'
+import Form from 'components/form'
+import TodosList from 'components/todos-list'
+import Filter from 'components/filter'
 
 const App = ({ todos, handleAddTodo, handleToggleTodo }) => (
   <div>
-    <form onSubmit={handleAddTodo}>
-      <input type='text' name='todo' />
-      <button type='submit'>Adicionar</button>
-    </form>
+    <Form  handleAddTodo={handleAddTodo} />
 
     <ul>
       {todos.map((todo) => (
