@@ -14,8 +14,10 @@ const Filter = ({ activeFilter, handleFilter }) => (
         key={item.action}
         action={item.action}
         activeFilter={activeFilter}
-        label={item.label}
-        onClick={handleFilter(item.action)}/>
+        onClick={handleFilter(item.action)}
+      >
+        {item.label}
+      </FilterLink>
     ))}
   </div>
 )
