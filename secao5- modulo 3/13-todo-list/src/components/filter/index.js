@@ -9,10 +9,22 @@ const Filter = ({ activeFilter, handleFilter }) => (
     <h3>Mostrar</h3>
     {filterItems.map((item) => {
       if (item.action === activeFilter) {
-        return <span key={item.action} style={{ marginRight: 10 }}>{item.label}</span>
+        return <span
+                  key={item.action}
+                  style={{ marginRight: 10 }}
+                >
+                  {item.label}
+               </span>
       }
 
-      return <a href='' key={item.action} style={{ marginRight: 10 }} onClick={handleFilter(item.action)}>{item.label}</a>
+      return <a
+                href=''
+                key={item.action}
+                style={{ marginRight: 10 }}
+                onClick={handleFilter(item.action)}
+              >
+                {item.label}
+              </a>
     })}
   </div>
 )
