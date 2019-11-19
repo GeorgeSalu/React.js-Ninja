@@ -5,25 +5,22 @@ import { connect } from 'react-redux'
 import { toggleTodo } from 'reducers/todos/action-creators'
 import * as filterActions from 'reducers/visibility-filter/actions'
 
-const TodoList = ({ todos,activeFilter , handleToggleTodo }) => (
+const TodoList = ({ todos, activeFilter, handleToggleTodo }) => (
   <ul>
     {getVisibleTodos(todos, activeFilter).map((todo) => (
-
       <li
         key={todo.id}
         style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
         onClick={handleToggleTodo(todo.id)}
       >
-
         {todo.text}
       </li>
-
     ))}
   </ul>
 )
 
 const getVisibleTodos = (todos, activeFilter) => {
-  switch(activeFilter) {
+  switch (activeFilter) {
     case filterActions.SHOW_ALL:
       return todos
 
