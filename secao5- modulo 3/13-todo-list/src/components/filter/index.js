@@ -3,6 +3,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from 'reducers/visibility-filter/actions'
+import { setVisibilityFilter } from 'reducers/visibility-filter/action-creators'
 
 const Filter = ({ activeFilter, handleFilter }) => (
   <div>
@@ -42,7 +43,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   handleFilter: (filter) => (e) => {
     e.preventDefault()
-
+    dispatch(setVisibilityFilter(filter))
   }
 })
 
