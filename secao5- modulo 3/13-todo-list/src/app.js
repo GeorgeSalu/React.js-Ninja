@@ -7,7 +7,7 @@ import Filter from 'components/filter'
 
 const App = () => (
   <div>
-    <Form  />
+    <Form />
 
     <TodosList />
 
