@@ -7,10 +7,8 @@ import * as actions from 'reducers/visibility-filter/actions'
 const Filter = ({ activeFilter }) => (
   <div>
     <h3>Mostrar</h3>
-
     {filterItems.map((item) => {
-
-      if(item.action === activeFilter) {
+      if (item.action === activeFilter) {
         return <span key={item.action} style={{ marginRight: 10 }}>{item.label}</span>
       }
 
@@ -24,8 +22,6 @@ const filterItems = [
   {label: 'Finalizados', action: actions.SHOW_COMPLETED},
   {label: 'A Fazer', action: actions.SHOW_ACTIVE}
 ]
-
-//['Todos', 'Finalizados', 'A fazer']
 
 const mapStateToProps = (state) => ({
   activeFilter: state.visibilityFilter
