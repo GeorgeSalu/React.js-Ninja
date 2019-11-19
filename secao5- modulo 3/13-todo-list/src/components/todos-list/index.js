@@ -4,9 +4,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { toggleTodo } from 'reducers/todos/action-creators'
 
-const TodoList = ({ todos, handleToggleTodo }) => (
+const TodoList = ({ todos,activeFilter , handleToggleTodo }) => (
   <ul>
-    {todos.map((todo) => (
+    {getVisibleTodos(todos, activeFilter).map((todo) => (
 
       <li
         key={todo.id}
@@ -21,8 +21,13 @@ const TodoList = ({ todos, handleToggleTodo }) => (
   </ul>
 )
 
+const getVisibleTodos = (todos, activeFilter) => {
+
+}
+
 const mapStateToProps = (state) => ({
-  todos: state.todos
+  todos: state.todos,
+  activeFilter: state.visibilityFilter
 })
 
 const mapDispatchToProps = (dispatch) => ({
