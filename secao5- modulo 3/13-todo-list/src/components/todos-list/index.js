@@ -3,6 +3,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { toggleTodo } from 'reducers/todos/action-creators'
+import * as filterActions from 'reducers/visibility-filter/actions'
 
 const TodoList = ({ todos,activeFilter , handleToggleTodo }) => (
   <ul>
@@ -22,7 +23,16 @@ const TodoList = ({ todos,activeFilter , handleToggleTodo }) => (
 )
 
 const getVisibleTodos = (todos, activeFilter) => {
+  switch(activeFilter) {
+    case filterActions.SHOW_ALL:
+      return todos
 
+    case filterActions.SHOW_COMPLETED:
+      return todos.filter((todo) => todo.completed)
+
+    case filterActions.SHOW_ACTIVE:
+      return todos.filter((todo) => !todo.completed)
+  }
 }
 
 const mapStateToProps = (state) => ({
