@@ -6,8 +6,10 @@ import reducerVisibilityFilter from './visibility-filter'
 
 const combineReducers = (reducers) => (state = {}, action) => {
   return Object.keys(reducers).reduce((nextState, key) => {
-    nextState[key] = reducers[key](state[key], action)
-    return nextState
+    return {
+      ...nextState,
+      [key]: reducers[key](state[key], action)
+    }
   }, {})
 }
 
