@@ -13,7 +13,7 @@ const SearchCep = () => (
       <thead>
         <tr>
           <td>Cep</td>
-          <td>Endenreco</td>
+          <td>Endereco</td>
           <td>Bairro</td>
           <td>Cidade</td>
           <td>Estado</td>
@@ -23,7 +23,7 @@ const SearchCep = () => (
       <tbody>
         <tr>
           <td>999999</td>
-          <td>Endenreco</td>
+          <td>Endereco</td>
           <td>Bairro</td>
           <td>Cidade</td>
           <td>Estado</td>
