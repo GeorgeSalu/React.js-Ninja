@@ -5,14 +5,26 @@ import SearchCep from './search-cep'
 import ajax from '@fdaciuk/ajax'
 
 class SearchCepContainer extends PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      address: '',
+      city: '',
+      code: '',
+      district: '',
+      state: '',
+      status: 1
+    }
+  }
+
   async componentDidMount () {
-    const response = await ajax().get('http://apps.widenet.com.br/busca-cep/api/cep.json', { code: '06233-030' })
-    console.log(response)
+    const response = await ajax().get('http://apps.widenet.com.br/busca-cep/api/cep.json?code=06233-030')
+    this.setState(response)
   }
 
   render () {
     return (
-      <SearchCep />
+      <SearchCep {...this.state} />
     )
   }
 }
