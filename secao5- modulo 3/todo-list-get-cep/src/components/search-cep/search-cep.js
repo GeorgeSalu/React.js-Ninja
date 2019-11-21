@@ -9,12 +9,13 @@ const SearchCep = ({
   district,
   state,
   status,
+  isFetching,
   handleSubmit
  }) => (
   <div>
     <form onSubmit={handleSubmit}>
       <input type='text' name='cep' />
-      <button type='submit'>Buscar enderecos</button>
+      <button type='submit' disabled={isFetching}>Buscar enderecos</button>
     </form>
 
     <table>
