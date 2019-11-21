@@ -15,10 +15,15 @@ const SearchCep = ({
   <div>
     <form onSubmit={handleSubmit}>
       <input type='text' name='cep' />
-      <button type='submit' disabled={isFetching}>Buscar enderecos</button>
+      <button type='submit' disabled={isFetching}>
+        {isFetching ? 'Buscando....' : 'Buscar enderecos'}
+      </button>
     </form>
 
-    <table>
+    {status === 0 && <div>Cep nao encontrado</div>}
+
+    {status === 1 && (
+      <table>
       <thead>
         <tr>
           <td>Cep</td>
@@ -41,6 +46,7 @@ const SearchCep = ({
         </tr>
       </tbody>
     </table>
+    )}
   </div>
 )
 
