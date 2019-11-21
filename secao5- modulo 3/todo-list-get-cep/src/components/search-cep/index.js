@@ -15,14 +15,21 @@ class SearchCepContainer extends PureComponent {
     status: 1
   }
 
-  async componentDidMount () {
-    const response = await ajax().get('http://apps.widenet.com.br/busca-cep/api/cep.json?code=06233-030')
+  handleSubmit = async (e) => {
+    e.preventDefault()
+    const cep = e.target.cep.value
+    const response = await ajax().get(`http://apps.widenet.com.br/busca-cep/api/cep.json?code=${cep}`)
     this.setState(response)
+  }
+
+  async componentDidMount () {
   }
 
   render () {
     return (
-      <SearchCep {...this.state} />
+      <SearchCep
+        {...this.state}
+        handleSubmit={this.handleSubmit} />
     )
   }
 }

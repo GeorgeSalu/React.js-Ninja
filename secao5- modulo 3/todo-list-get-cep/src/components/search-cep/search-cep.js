@@ -9,9 +9,10 @@ const SearchCep = ({
   district,
   state,
   status,
+  handleSubmit
  }) => (
   <div>
-    <form>
+    <form onSubmit={handleSubmit}>
       <input type='text' name='cep' />
       <button type='submit'>Buscar enderecos</button>
     </form>
