@@ -24,6 +24,7 @@ const SearchCep = ({
           <td>Bairro</td>
           <td>Cidade</td>
           <td>Estado</td>
+          <td>Status</td>
         </tr>
       </thead>
 
@@ -34,6 +35,7 @@ const SearchCep = ({
           <td>{district}</td>
           <td>{city}</td>
           <td>{state}</td>
+          <td>{status}</td>
         </tr>
       </tbody>
     </table>
