@@ -6,6 +6,7 @@ const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
   dist: join(__dirname, '..', 'dist'),
+  // necessario para o milligram
   modules: join(__dirname, '..', 'node_modules')
 }
 
