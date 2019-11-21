@@ -1,36 +1,21 @@
 'use strict'
 
-import React from 'react'
+import React, { PureComponent } from 'react'
+import SearchCep from './search-cep'
+import ajax from '@fdaciuk/ajax'
 
-const SearchCep = () => (
-  <div>
-    <form>
-      <input type='text' name='cep' />
-      <button type='submit'>Buscar enderecos</button>
-    </form>
+class SearchCepContainer extends PureComponent {
 
-    <table>
-      <thead>
-        <tr>
-          <td>Cep</td>
-          <td>Endereco</td>
-          <td>Bairro</td>
-          <td>Cidade</td>
-          <td>Estado</td>
-        </tr>
-      </thead>
+  async componentDidMount() {
+    const response = await ajax().get('http://apps.widenet.com.br/busca-cep/api/cep.json?code=06233-030')
+    console.log(response)
+  }
 
-      <tbody>
-        <tr>
-          <td>999999</td>
-          <td>Endereco</td>
-          <td>Bairro</td>
-          <td>Cidade</td>
-          <td>Estado</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-)
+  render() {
+    return (
+      <SearchCep />
+    )
+  }
+}
 
-export default SearchCep
+export default SearchCepContainer
