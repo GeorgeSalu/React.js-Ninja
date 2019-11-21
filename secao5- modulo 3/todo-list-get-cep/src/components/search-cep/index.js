@@ -5,16 +5,14 @@ import SearchCep from './search-cep'
 import ajax from '@fdaciuk/ajax'
 
 class SearchCepContainer extends PureComponent {
-  constructor() {
-    super()
-    this.state = {
-      address: '',
-      city: '',
-      code: '',
-      district: '',
-      state: '',
-      status: 1
-    }
+
+  state = {
+    address: '',
+    city: '',
+    code: '',
+    district: '',
+    state: '',
+    status: 1
   }
 
   async componentDidMount () {
