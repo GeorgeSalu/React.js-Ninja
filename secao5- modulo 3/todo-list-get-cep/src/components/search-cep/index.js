@@ -42,4 +42,4 @@ const mapDispatchToProps = (dispatch) => ({
   updateAddress: (data) => dispatch(updateAddress(data))
 })
 
-export default connect(mapStateToProps)(SearchCepContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchCepContainer)
