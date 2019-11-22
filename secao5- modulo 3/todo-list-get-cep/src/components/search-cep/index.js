@@ -35,7 +35,7 @@ class SearchCepContainer extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  address = state.address
+  address: state.address
 })
 
 const mapDispatchToProps = (dispatch) => ({
