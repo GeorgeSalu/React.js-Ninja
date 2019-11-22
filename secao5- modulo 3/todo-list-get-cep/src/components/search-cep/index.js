@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import SearchCep from './search-cep'
 import ajax from '@fdaciuk/ajax'
+import { updateAddress } from 'reducers/address/action-creators'
 
 class SearchCepContainer extends PureComponent {
 
@@ -18,14 +19,16 @@ class SearchCepContainer extends PureComponent {
     const cep = e.target.cep.value
     const response = await ajax().get(`http://apps.widenet.com.br/busca-cep/api/cep.json?code=${cep}`)
 
-    this.setState({ isFetching: false })
-    this.setState(response)
+      this.setState({ isFetching: false })
+      this.props.dispatch(updateAddress(response))
+
   }
 
   render () {
     return (
       <SearchCep
         {...this.state}
+        {...this.state.address}
         handleSubmit={this.handleSubmit} />
     )
   }
