@@ -1,18 +1,13 @@
 'use strict'
 
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import SearchCep from './search-cep'
 import ajax from '@fdaciuk/ajax'
 
 class SearchCepContainer extends PureComponent {
 
   state = {
-    address: '',
-    city: '',
-    code: '',
-    district: '',
-    state: '',
-    status: 1,
     isFetching: false
   }
 
@@ -27,9 +22,6 @@ class SearchCepContainer extends PureComponent {
     this.setState(response)
   }
 
-  async componentDidMount () {
-  }
-
   render () {
     return (
       <SearchCep
@@ -39,4 +31,8 @@ class SearchCepContainer extends PureComponent {
   }
 }
 
-export default SearchCepContainer
+const mapStateToProps = (state) => ({
+  address = state.address
+})
+
+export default connect(mapStateToProps)(SearchCepContainer)
