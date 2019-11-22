@@ -18,7 +18,11 @@ const initialState = {
   address: {
     address: 'rua tal',
     city: 'cidade',
-    state: 'pr'
+    state: 'pr',
+    code: '111110-22',
+    district: 'Bairro',
+    state: 'pr',
+    status: 1
   }
 }
 
