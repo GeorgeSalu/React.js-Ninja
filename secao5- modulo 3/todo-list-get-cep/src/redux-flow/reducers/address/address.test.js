@@ -16,7 +16,7 @@ it('should action UPDATE_ADDRESS update address', () => {
     code: '',
     district: '',
     state: '',
-    status: 1,
+    status: 1
   })
 
   const action = deepFreeze({
@@ -27,17 +27,17 @@ it('should action UPDATE_ADDRESS update address', () => {
       code: '80610-01',
       district: 'Agua Verde',
       state: 'PR',
-      status: 1,
+      status: 1
     }
   })
 
   const after = {
-      address: 'Avenida Presidente Kennedy - de 1632',
-      city: 'Curitiba',
-      code: '80610-01',
-      district: 'Agua Verde',
-      state: 'PR',
-      status: 1,
+    address: 'Avenida Presidente Kennedy - de 1632',
+    city: 'Curitiba',
+    code: '80610-01',
+    district: 'Agua Verde',
+    state: 'PR',
+    status: 1
   }
 
   expect(address(before, action)).to.be.deep.equal(after)
