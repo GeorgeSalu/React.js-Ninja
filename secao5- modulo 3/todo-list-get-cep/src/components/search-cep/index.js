@@ -19,8 +19,8 @@ class SearchCepContainer extends PureComponent {
     const cep = e.target.cep.value
     const response = await ajax().get(`http://apps.widenet.com.br/busca-cep/api/cep.json?code=${cep}`)
 
-      this.setState({ isFetching: false })
-      this.props.updateAddress(response)
+    this.setState({ isFetching: false })
+    this.props.updateAddress(response)
 
   }
 
