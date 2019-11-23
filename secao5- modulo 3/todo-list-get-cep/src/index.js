@@ -3,12 +3,20 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import App from './app'
 import reducer from 'reducers'
 
-const store = createStore(reducer)
+const middleware = ({ dispatch, getState }) => {
+  return (next) => {
+    return (action) => {
+      return next(action)
+    }
+  }
+}
+
+const store = createStore(reducer, applyMiddleware(middleware))
 
 const renderState = () => {
   console.log('state:', store.getState())
