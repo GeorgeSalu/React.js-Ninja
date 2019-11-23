@@ -8,7 +8,6 @@ import { Provider } from 'react-redux'
 import App from './app'
 import reducer from 'reducers'
 
-
 const store = createStore(reducer)
 
 const renderState = () => {
@@ -37,8 +36,8 @@ if (module.hot) {
     renderApp(NextApp)
   })
 
-module.hot.accept('reducers', () => {
-  const nextReducer = require('reducers').default
-  store.replaceReducer(nextReducer)
-})
+  module.hot.accept('reducers', () => {
+    const nextReducer = require('reducers').default
+    store.replaceReducer(nextReducer)
+  })
 }
