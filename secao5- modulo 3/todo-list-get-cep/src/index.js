@@ -8,15 +8,14 @@ import { Provider } from 'react-redux'
 import App from './app'
 import reducer from 'reducers'
 
-const middleware = ({ dispatch, getState }) => {
-  return (next) => {
-    return (action) => {
-      return next(action)
-    }
-  }
+const logger = ({ dispatch, getState }) => (next) => (action) => {
+  console.log('LOGGER:Will dispatch:', action)
+  const nextAction = next(action)
+  console.log('LOGGER:Will dispatch:', nextAction)
+  return nextAction
 }
 
-const store = createStore(reducer, applyMiddleware(middleware))
+const store = createStore(reducer, applyMiddleware(logger))
 
 const renderState = () => {
   console.log('state:', store.getState())
