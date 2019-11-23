@@ -10,9 +10,11 @@ import reducer from 'reducers'
 
 const logger = ({ dispatch, getState }) => (next) => (action) => {
   console.log('LOGGER:Will dispatch:', action)
-  const nextAction = next(action)
-  console.log('LOGGER:Will dispatch:', nextAction)
-  return nextAction
+  setTimeout(() => {
+    const nextAction = next(action)
+    console.log('LOGGER:Will dispatch:', nextAction)
+    return nextAction
+  }, 1000)
 }
 
 const store = createStore(reducer, applyMiddleware(logger))
