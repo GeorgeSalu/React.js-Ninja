@@ -4,15 +4,11 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import SearchCep from './search-cep'
 
-class SearchCepContainer extends PureComponent {
-  render () {
-    return (
-      <SearchCep
-        {...this.state.address}
-        handleSubmit={this.handleSubmit} />
-    )
-  }
-}
+const SearchCepContainer = ({ address, handleSubmit }) => (
+    <SearchCep
+      {...this.state.address}
+      handleSubmit={this.handleSubmit} />
+)
 
 const mapStateToProps = (state) => ({
   address: state.address
