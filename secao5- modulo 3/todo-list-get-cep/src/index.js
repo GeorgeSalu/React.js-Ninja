@@ -10,14 +10,19 @@ import reducer from 'reducers'
 
 const logger = ({ dispatch, getState }) => (next) => (action) => {
   console.log('LOGGER:Will dispatch:', action)
-  setTimeout(() => {
-    const nextAction = next(action)
-    console.log('LOGGER:Will dispatch:', nextAction)
-    return nextAction
-  }, 1000)
+  const nextAction = next(action)
+  console.log('LOGGER:Will dispatch:', nextAction)
+  return nextAction
 }
 
-const store = createStore(reducer, applyMiddleware(logger))
+const thunk = ({ dispatch, getState }) => (next) => (action) => {
+  console.log('THUNK:Will dispatch:', action)
+  const nextAction = next(action)
+  console.log('THUNK:Will dispatch:', nextAction)
+  return nextAction
+}
+
+const store = createStore(reducer, applyMiddleware(logger, thunk))
 
 const renderState = () => {
   console.log('state:', store.getState())
