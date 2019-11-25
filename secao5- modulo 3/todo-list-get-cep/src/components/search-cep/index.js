@@ -8,9 +8,7 @@ import { updateAddress } from 'reducers/address/action-creators'
 
 class SearchCepContainer extends PureComponent {
 
-  state = {
-    isFetching: false
-  }
+  state = { isFetching: false }
 
   handleSubmit = async (e) => {
     e.preventDefault()
@@ -21,7 +19,6 @@ class SearchCepContainer extends PureComponent {
 
     this.setState({ isFetching: false })
     this.props.updateAddress(response)
-
   }
 
   render () {
