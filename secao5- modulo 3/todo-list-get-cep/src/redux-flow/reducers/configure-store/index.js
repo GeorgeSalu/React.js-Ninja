@@ -22,11 +22,3 @@ const logger = () => window.__REDUX_DEVTOOLS_EXTENSION__
   ? window.__REDUX_DEVTOOLS_EXTENSION__()
   : (x) => x
 
-
-
-const thunk = ({ dispatch, getState }) => (next) => (action) => {
-  if(typeof action === 'function') {
-    return action(dispatch)
-  }
-  return next(action)
-}
