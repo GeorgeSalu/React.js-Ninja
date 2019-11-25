@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import SearchCep from './search-cep'
 
 class SearchCepContainer extends PureComponent {
-
   render () {
     return (
       <SearchCep
@@ -20,13 +19,10 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
   handleSubmit = async (e) => {
     e.preventDefault()
-
     this.props.fetchAddress(e.target.cep.value)
   }
-
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchCepContainer)
