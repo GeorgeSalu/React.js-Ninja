@@ -3,8 +3,8 @@
 import { createStore, applyMiddleware } from 'redux'
 import { createStore, applyMiddleware } from 'redux'
 
-export default () => {
-  const store = createStore(reducer, applyMiddleware(logger, thunk))
+export default ({ initialState } = {}) => {
+  const store = createStore(reducer, initialState, applyMiddleware(logger, thunk))
 
   if(module.hot) {
     module.hot.accept('reducers', () => {
@@ -17,9 +17,11 @@ export default () => {
 }
 
 const logger = ({ dispatch, getState }) => (next) => (action) => {
+  console.group(`LOGGER->${action.type}`)
   console.log('LOGGER:Will dispatch:', action)
   const nextAction = next(action)
   console.log('LOGGER:Will dispatch:', nextAction)
+  console.groupEnd(`LOGGER->${action.type}`)
   return nextAction
 }
 
