@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 const SearchCep = ({
   address: {
-      address,
+    address,
     city,
     code,
     district,
