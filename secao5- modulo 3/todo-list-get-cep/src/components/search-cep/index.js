@@ -3,7 +3,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import SearchCep from './search-cep'
-import { fetchAddress } from 'reducers/address/action-creators'
 
 class SearchCepContainer extends PureComponent {
 
