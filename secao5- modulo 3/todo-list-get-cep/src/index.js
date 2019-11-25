@@ -27,6 +27,4 @@ if (module.hot) {
     const NextApp = require('./app').default
     renderApp(NextApp)
   })
-
-
 }
