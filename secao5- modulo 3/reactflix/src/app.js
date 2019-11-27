@@ -1,11 +1,8 @@
 'use strict'
 
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-import 'normalize.css'
-import 'milligram'
-
-class App extends PureComponent {
+class App extends Component {
   render () {
     return (
       <div>
