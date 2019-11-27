@@ -1,18 +1,25 @@
 'use strict'
 
-import React, { Component } from 'react'
+import React from 'react'
+import styled from 'styled-components'
 
 import 'normalize.css'
 import 'milligram'
 
-class App extends Component {
-  render () {
-    return (
-      <div>
-        <h1>ReactJs</h1>
-      </div>
-    )
-  }
-}
+const App = () => (
+  <div>
+    <header>
+      <h1>Reactflix</h1>
+    </header>
+
+    <main>
+      Conteudo
+    </main>
+
+    <footer>
+      &copy; 2018
+    </footer>
+  </div>
+)
 
 export default App
