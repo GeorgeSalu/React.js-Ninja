@@ -8,18 +8,28 @@ import 'milligram'
 
 const App = () => (
   <div>
-    <header>
+    <Header>
       <h1>Reactflix</h1>
-    </header>
+    </Header>
 
     <main>
       Conteudo
     </main>
 
-    <footer>
+    <Footer>
       &copy; 2018
-    </footer>
+    </Footer>
   </div>
 )
+
+const Header = styled.header`
+  height: 60px;
+  background: #333
+`
+
+const Footer = styled.footer`
+  height: 30px;
+  background: #333
+`
 
 export default App
