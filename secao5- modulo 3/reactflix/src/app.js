@@ -13,7 +13,9 @@ const App = () => (
     </Header>
 
     <Main>
-      Conteudo
+      <VideosList >
+        {Array.from({ length: 10 })}
+      </VideosList>
     </Main>
 
     <Footer>
@@ -42,6 +44,8 @@ const Header = styled.header`
 const Main = styled.main`
   main-height:
 `
+
+const VideosList = styled.div
 
 const Footer = styled.footer`
   height:  ${footerHeigth}
