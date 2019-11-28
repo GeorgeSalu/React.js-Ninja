@@ -27,8 +27,8 @@ injectGlobal`
     heigth: 100%
   }
 `
-const headerHeigth='60px'
-const footerHeigth='30px'
+const headerHeigth = '60px'
+const footerHeigth = '30px'
 
 const Container = styled.div`
   heigth: 100%
