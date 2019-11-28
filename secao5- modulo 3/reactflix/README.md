@@ -1,5 +1,6 @@
 # Reactflix
 
+treinamento react-ninja
 A ideia é fazer um app para listagem de vídeos, usando o Youtube.
 Vamos utilizar React + Redux apenas para fazer a aplicação.
 
