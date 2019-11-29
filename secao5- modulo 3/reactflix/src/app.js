@@ -1,7 +1,9 @@
+
 'use strict'
 
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
+import Play from 'components/play'
 
 import 'normalize.css'
 import 'milligram'
@@ -13,12 +15,14 @@ const App = () => (
     </Header>
 
     <Main>
-      <VideosList >
+      <VideosList>
         {Array.from({ length: 10 }).map((item, index) => (
-          <div key={index}>
-            <VideoThumb />
-            <VideoTitle>titulo do video</VideoTitle>
-          </div>
+          <Video key={index}>
+            <VideoThumb>
+              <PlayStyled />
+            </VideoThumb>
+            <VideoTitle>Título do Vídeo</VideoTitle>
+          </Video>
         ))}
       </VideosList>
     </Main>
@@ -31,23 +35,24 @@ const App = () => (
 
 injectGlobal`
   html, body, div[data-js="app"] {
-    heigth: 100%
+    height: 100%;
   }
 `
-const headerHeigth = '60px'
-const footerHeigth = '30px'
+
+const headerHeight = '60px'
+const footerHeight = '30px'
 
 const Container = styled.div`
-  heigth: 100%
+  height: 100%;
 `
 
 const Header = styled.header`
-  height:  ${headerHeigth}
-  background: #333
+  height: ${headerHeight};
+  background: #333;
 `
 
 const Main = styled.main`
-  main-height:
+  min-height: calc(100% - ${headerHeight} - ${footerHeight});
 `
 
 const VideosList = styled.div`
@@ -56,21 +61,31 @@ const VideosList = styled.div`
 `
 
 const Video = styled.section`
-  flex: 1 1 380px
+  flex: 1 1 300px;
+  margin: 0 5px 5px;
 `
 
 const VideoThumb = styled.div`
+  align-items: center;
   border: 1px solid #999;
+  display: flex;
   height: 150px;
+  justify-content: center;
+`
+
+const PlayStyled = styled(Play)`
+  fill: #999;
+  height: 50px;
+  width: 50px;
 `
 
 const VideoTitle = styled.h2`
-  font-size: 18px
+  font-size: 18px;
 `
 
 const Footer = styled.footer`
-  height:  ${footerHeigth}
-  background: #333
+   height: ${footerHeight};
+  background: #333;
 `
 
 export default App
