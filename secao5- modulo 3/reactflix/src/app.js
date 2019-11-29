@@ -14,7 +14,12 @@ const App = () => (
 
     <Main>
       <VideosList >
-        {Array.from({ length: 10 })}
+        {Array.from({ length: 10 }).map((item, index) => (
+          <div key={index}>
+            <VideoThumb />
+            <VideoTitle>titulo do video</VideoTitle>
+          </div>
+        ))}
       </VideosList>
     </Main>
 
@@ -45,7 +50,23 @@ const Main = styled.main`
   main-height:
 `
 
-const VideosList = styled.div
+const VideosList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const Video = styled.section`
+  flex: 1 1 380px
+`
+
+const VideoThumb = styled.div`
+  border: 1px solid #999;
+  height: 150px;
+`
+
+const VideoTitle = styled.h2`
+  font-size: 18px
+`
 
 const Footer = styled.footer`
   height:  ${footerHeigth}
