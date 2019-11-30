@@ -1,4 +1,4 @@
-### React.js-Ninja
+### ReactJs Ninja
 Que tal aprender ReactJS e todas as suas artimanhas? Aprender como tratar estados da sua aplicação de forma eficiente, e fazer aquele seu projeto que tende a crescer à perder de vista, de forma natural e componentizada, performando como um raio? Com o ReactJS nós podemos fazer isso!
 O que será visto no curso?
 
